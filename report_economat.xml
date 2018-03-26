@@ -4,9 +4,7 @@
 
         <template id="report_economat" inherit_id="stock.report_picking">
 
-                <xpath expr="//div[@class='table-condensed']" position="before">
 
-                </xpath>
 
         </template>
     </data>
