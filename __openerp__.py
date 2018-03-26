@@ -18,7 +18,7 @@
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'sale_stock', 'sale', 'portal_sale', 'stock_picking'],
+    'depends': ['base', 'sale_stock', 'sale', 'purchase', 'stock'],
 
     'data': ['views/magasin_views.xml'
              ],
