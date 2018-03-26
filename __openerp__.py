@@ -20,7 +20,8 @@
     # any module necessary for this one to work correctly
     'depends': ['base', 'sale_stock', 'sale', 'purchase', 'stock'],
 
-    'data': ['views/magasin_views.xml'
+    'data': ['views/magasin_views.xml',
+             'report_picking.xml'
 
              ],
 
