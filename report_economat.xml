@@ -5,7 +5,7 @@
         <template id="report_economat" inherit_id="stock.report_picking">
 
                 <xpath expr="//div[@class='table-condensed']" position="before">
-                <h2 t-field = "o.commentaire" class="mt0"/>
+
                 </xpath>
 
         </template>
