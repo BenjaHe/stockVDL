@@ -21,7 +21,7 @@
     'depends': ['base', 'sale_stock', 'sale', 'purchase', 'stock'],
 
     'data': ['views/magasin_views.xml'
-             'Bon_economat.xml'
+
              ],
 
 }
