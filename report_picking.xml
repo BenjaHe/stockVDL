@@ -4,7 +4,7 @@
 
         <template id="report_economat" inherit_id="stock.report_picking">
 
-                <xpath expr="//div[@class='header']" position="after">
+                <xpath expr="//div[@class='mt0']" position="after">
                 <h2 t-field = "o.commentaire" class="mt0"/>
                 </xpath>
 
