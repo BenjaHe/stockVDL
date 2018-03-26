@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+  <data>
+      <record id="view_form_stock_picking_inherited" model="ir.ui.view">
+          <field name="name">Stock Picking Form</field>
+          <field name="model">stock.picking</field>
+          <field name="inherit_id" ref="stock_picking_form"/>
+          <field name="arch" type="xml">
+
+              <!-- Informations ajoutées -->
+
+              <field name="origin" position="after">
+                  <field name="commentaire" string="Commentaire pour la livraison" class="oe_inline"/>
+              </field>
+
+
+          </field>
+      </record>
+  </data>
+</openerp>
