@@ -2,12 +2,13 @@
 <openerp>
     <data>
 
-        <template id="report_economat" inherit_id="stock.report_picking">
+        <template id="report_economat"
+                  inherit_id="stock.report_picking"
+                  model ="stock.picking">
 
             <xpath expr="//div[@class='col-xs-5 col-xs-offset-1']" position="after">
                 <group>
                     <field name="o.commentaire"/>
-                    <h1>ESSAI DE TEXTE</h1>
                 </group>
             </xpath>
 
