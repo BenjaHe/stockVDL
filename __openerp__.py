@@ -6,8 +6,10 @@
         Extention du module Stock Picking pour pouvoir laisser un commentaire sur la picking list des magasiniers.""",
 
     'description': """
-        Le module modifie juste le module stock picking et l'information doit être encodé directement sur la picking list mais il n'est pas encore possible de l'encoder 
-        via la rédaction du bon de commande (sale_order).
+        Le module modifie juste le module stock picking. Il surcharge le modèle stock.picking pour ajouter un seul champ : "commentaire" qui est un commentaire utile pour
+        la  livraison. L'information s'encode directement dans la vue Inventaire->Livraison-> vue form de la livraison "Commentaire pour la livraison".
+        Ce champ est reporté dans le document imprimable (report) "Bon de préparation avec code barre". Le rapport existant est surchargé pour faire apparaître le champs 
+        en haut du formulaire à côté de l'adresse de livraison du client.
 
     """,
 
