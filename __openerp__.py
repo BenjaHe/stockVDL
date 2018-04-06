@@ -3,13 +3,11 @@
     'name': "Stock VDL",
 
     'summary': """
-        Extention du module Stock Picking pour pouvoir laisser un commentaire sur la picking list des magasiniers.""",
+        Extention du module Stock Picking et Res.Partner pour les besoins de l'Economat.""",
 
     'description': """
-        Le module modifie juste le module stock picking. Il surcharge le modèle stock.picking pour ajouter un seul champ : "commentaire" qui est un commentaire utile pour
-        la  livraison. L'information s'encode directement dans la vue Inventaire->Livraison-> vue form de la livraison "Commentaire pour la livraison".
-        Ce champ est reporté dans le document imprimable (report) "Bon de préparation avec code barre". Le rapport existant est surchargé pour faire apparaître le champs 
-        en haut du formulaire à côté de l'adresse de livraison du client.
+        Le module modifie les modules res.partner et stock pour ajouter un commentaire pour la livraison (Inventaire) 
+        et les informations liées au budget du client (Contacts).
 
     """,
 
@@ -17,13 +15,14 @@
     'website': "",
 
     'category': 'Uncategorized',
-    'version': '0.1',
+    'version': '1.0',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'sale_stock', 'sale', 'purchase', 'stock'],
+    'depends': ['base', 'sale_stock', 'sale', 'purchase', 'stock', 'account'],
 
     'data': ['views/magasin_views.xml',
-             'report_economat.xml'
+             'views/report_economat.xml',
+             'account_total.xml'
              ],
 
 }
