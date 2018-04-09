@@ -13,21 +13,21 @@
           </field>
       </record>
 
-   <!--    <record id="view_button_tvac_inherited" model="ir.ui.view">
+       <record id="view_button_tvac_inherited" model="ir.ui.view">
           <field name="name">Invoiced Total TVAC</field>
           <field name="model">res.partner</field>
           <field name="inherit_id" ref="account.partner_view_buttons"/>
-          <field name="arch" type=" xml"> -->
+          <field name="arch" type=" xml">
 
               <!-- Suppression du bouton donnant le montant total HTVA donné par défault dans Odoo -->
-           <!--    <xpath expr="//button[@id='invoice_button']" position="attributes">
+               <xpath expr="//button[@id='invoice_button']" position="attributes">
                         <attribute name="invisible">True</attribute>
-               </xpath> -->
+               </xpath>
 
               <!-- Ajout des boutons donnant le total des factures TVAC de l'année en cours (total_invoiced_tvac) et du budget restant
                     ATTENTION : un champs ne peut pas être présent deux fois dans une vue,
                     raison pour laquelle ces champs ne sont pas dans la vue form -->
-            <!--   <div name="button_box" position="inside">
+               <div name="button_box" position="inside">
                    <button type="action" class="oe_stat_button" id="total_invoiced_tvac" icon="fa-pencil-square-o" name="254" attrs="{'invisible': [('customer', '=', False)]}" context="{'search_default_partner_id': active_id,'default_partner_id': active_id}">
                         <div class="o_form_field o_stat_info">
                             <span class="o_stat_value"><field name="total_invoiced_tvac" widget="monetary" options="{'currency_field': 'currency_id'}"/></span>
@@ -43,7 +43,7 @@
                     </button>
                 </div>
           </field>
-      </record> -->
+      </record>
 
   </data>
 </openerp>
