@@ -18,7 +18,7 @@
           <field name="name">Invoiced Total TVAC</field>
           <field name="model">res.partner</field>
           <field name="inherit_id" ref="account.partner_view_buttons"/>
-          <field name="arch" type=" xml">
+          <field name="arch" type="xml">
 
 
               <!-- Suppression du bouton donnant le montant total HTVA donné par défault dans Odoo -->
