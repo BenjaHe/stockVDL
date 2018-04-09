@@ -20,8 +20,9 @@
           <field name="inherit_id" ref="account.partner_view_buttons"/>
           <field name="arch" type=" xml">
 
-          </field>
-       </record>
+              <field name="total_invoiced_tvac" string="Champ test"/>
+
+
 
               <!-- Suppression du bouton donnant le montant total HTVA donné par défault dans Odoo
               <xpath expr="//button[@id='invoice_button']" position="attributes">
@@ -47,8 +48,8 @@
                     </button>
                 </div> -->
 
-      <!--    </field>
-      </record> -->
+          </field>
+      </record>
 
   </data>
 </openerp>
