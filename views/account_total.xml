@@ -14,13 +14,13 @@
           </field>
       </record>
 
-    <!--   <record id="view_button_tvac_inherited" model="ir.ui.view">
+       <record id="view_button_tvac_inherited" model="ir.ui.view">
           <field name="name">Invoiced Total TVAC</field>
           <field name="model">res.partner</field>
-          <field name="inherit_id" ref="account.partner_view_buttons"/>
+          <field name="inherit_id" ref="account.partner.view_buttons"/>
           <field name="arch" type=" xml">
 
-              <field name="total_invoiced_tvac" string="Champ test"/> -->
+                      <field name="total_invoiced_tvac" string="Champ test"/>
 
 
 
@@ -48,8 +48,8 @@
                     </button>
                 </div> -->
 
-     <!--     </field>
-      </record> -->
+          </field>
+      </record>
 
   </data>
 </openerp>
