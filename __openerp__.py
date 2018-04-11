@@ -18,7 +18,7 @@
     'version': '1.0',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'sale_stock', 'sale', 'purchase', 'stock', 'account', 'sale_order', 'payment_acquirer'],
+    'depends': ['base', 'sale_stock', 'sale', 'purchase', 'stock', 'account', 'sale', 'payment_acquirer'],
 
     'data': ['views/magasin_views.xml',
              'views/report_economat.xml',
