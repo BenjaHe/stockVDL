@@ -13,4 +13,4 @@ class AccountInvoice(models.Model):
     _inherit = 'account.invoice'
     _description = 'Invoice'
 
-    payment_acquired_id = fields.Many2one('payment_acquired_id.sale.order', 'budget_type', required=False)
+    payment_acquired_id = fields.Many2one('payment_acquired_id.sale_order', 'budget_type', required=False)
