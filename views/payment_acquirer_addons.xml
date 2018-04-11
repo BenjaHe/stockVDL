@@ -5,14 +5,14 @@
       <record id="view_form_account_invoice_inherited" model="ir.ui.view">
           <field name="name">Account Invoice Form</field>
           <field name="model">account.invoice</field>
-          <field name="inherit_id" ref="payment_acquirer.view_invoice_form"/>
+          <field name="inherit_id" ref="account_invoice_form"/>
           <field name="arch" type="xml">
 
-              <!-- Informations ajoutées
+              <!-- Informations ajoutées -->
 
               <field name="residual" position="after">
                   <field name="payment_acquired_id_budget" string="Type de budget" class="oe_inline"/>
-              </field>  -->
+              </field>
 
 
           </field>
