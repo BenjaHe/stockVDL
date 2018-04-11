@@ -11,6 +11,7 @@ from openerp.exceptions import ValidationError
 class AccountInvoice(models.Model):
     _name = 'account.invoice'
     _inherit = 'account.invoice'
-    _description = 'Invoice'
+    _rec_name = 'payement_acquirer'
+    _description = 'Budget_Type'
 
     payment_acquired_id_budget = fields.Many2one('payment.acquirer', 'budget_type', required=False)
