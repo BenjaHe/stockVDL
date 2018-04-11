@@ -15,5 +15,5 @@ class AccountInvoice(models.Model):
 
     payment_acquired_id_budget = fields.Many2one('payment.acquirer',
                                                  string='Type de budget',
-                                                 related='sale_order.payment_acquirer_id',
+                                                 related='payment_acquirer_id',
                                                  required=False)
