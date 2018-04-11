@@ -12,7 +12,6 @@ class AccountInvoice(models.Model):
     _name = 'account.invoice'
     _inherit = 'account.invoice'
     _description = 'Budget_Type'
-
     payment_acquired_id_budget = fields.Many2one('payment.acquirer',
                                                  string='Type de budget',
                                                  related='payment_acquirer_id',
