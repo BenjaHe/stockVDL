@@ -23,7 +23,6 @@
     'data': ['views/magasin_views.xml',
              'views/report_economat.xml',
              'views/account_total.xml',
-             'views/payment_acquirer_addons.xml'
              ],
 
 }
