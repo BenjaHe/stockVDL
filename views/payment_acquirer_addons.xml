@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+  <data>
+      <record id="view_form_account_invoice_inherited" model="ir.ui.view">
+          <field name="name">Account Invoice Form</field>
+          <field name="model">account.invoice</field>
+          <field name="inherit_id" ref="account.invoice_form"/>
+          <field name="arch" type="xml">
+
+              <!-- Informations ajoutées -->
+
+              <field name="residual" position="after">
+                  <field name="payment_acquirer_id_budget" string="Type de budget" class="oe_inline"/>
+              </field>
+
+
+          </field>
+      </record>
+  </data>
+</openerp>

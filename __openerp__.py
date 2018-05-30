@@ -18,11 +18,12 @@
     'version': '1.0',
 
     # any module necessary for this one to work correctly
-    'depends': ['base', 'sale_stock', 'sale', 'purchase', 'stock', 'account'],
+    'depends': ['base', 'sale_stock', 'sale', 'purchase', 'stock', 'account', 'website_sale', 'purchase','payment','payment_transfer'],
 
     'data': ['views/magasin_views.xml',
              'views/report_economat.xml',
              'views/account_total.xml',
+             'views/payment_acquirer_addons.xml'
              ],
 
 }
