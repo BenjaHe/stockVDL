@@ -40,7 +40,7 @@
                   <button type="action" class="oe_stat_button" id="total_invoiced_tvac_CE" icon="fa-pencil-square-o" name="254" attrs="{'invisible': [('customer', '=', False)]}" context="{'search_default_partner_id': active_id,'default_partner_id': active_id}">
                         <div class="o_form_field o_stat_info">
                             <span class="o_stat_value"><field name="total_invoiced_tvac_CE" widget="monetary" options="{'currency_field': 'currency_id'}"/></span>
-                            <span class="o_stat_text">Total sur CE</span>
+                            <span class="o_stat_text">Total sur BE</span>
                         </div>
                   </button>
 
@@ -51,7 +51,7 @@
                   <button type="action" class="oe_stat_button" id="total_invoiced_tvac_CP" icon="fa-pencil-square-o" name="254" attrs="{'invisible': [('customer', '=', False)]}" context="{'search_default_partner_id': active_id,'default_partner_id': active_id}">
                         <div class="o_form_field o_stat_info">
                             <span class="o_stat_value"><field name="total_invoiced_tvac_CP" widget="monetary" options="{'currency_field': 'currency_id'}"/></span>
-                            <span class="o_stat_text">Total sur CP</span>
+                            <span class="o_stat_text">Total sur BP</span>
                         </div>
                   </button>
 
@@ -69,7 +69,7 @@
                   <button type="action" class="oe_stat_button" id="budget_restant_CE" icon="fa-euro" name="254" attrs="{'invisible': [('customer', '=', False)]}" context="{'search_default_partner_id': active_id,'default_partner_id': active_id}">
                         <div class="o_form_field o_stat_info">
                             <span class="o_stat_value"><field name="budget_restant_CE" widget="monetary" options="{'currency_field': 'currency_id'}"/></span>
-                            <span class="o_stat_text">Solde sur CE</span>
+                            <span class="o_stat_text">Solde sur BE</span>
                         </div>
                   </button>
 
@@ -78,7 +78,7 @@
                   <button type="action" class="oe_stat_button" id="budget_restant_CP" icon="fa-euro" name="254" attrs="{'invisible': [('customer', '=', False)]}" context="{'search_default_partner_id': active_id,'default_partner_id': active_id}">
                         <div class="o_form_field o_stat_info">
                             <span class="o_stat_value"><field name="budget_restant_CP" widget="monetary" options="{'currency_field': 'currency_id'}"/></span>
-                            <span class="o_stat_text">Solde sur CP</span>
+                            <span class="o_stat_text">Solde sur BP</span>
                         </div>
                   </button>
 
