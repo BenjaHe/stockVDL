@@ -9,7 +9,10 @@
           <field name="arch" type="xml">
 
                 <field name="function" position="before">
-                <!--  <field name="budget_CP" string="Budget Propre (BP)"/> -->
+                  <field name="budget_CE" string="Budget Economat"/>
+                  <field name="budget_CP" string="Budget Propre"/>
+                  <field name="budget_test" string="Budget" />
+                  <field name="budget_restant" string="Budget restant"/>
                 </field>
           </field>
       </record>
