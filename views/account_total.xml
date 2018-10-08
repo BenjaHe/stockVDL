@@ -9,7 +9,6 @@
           <field name="arch" type="xml">
 
                 <field name="function" position="before">
-                  <field name="budget_CE" string="Budget Economat (BE)"/>
                   <field name="budget_CP" string="Budget Propre (BP)"/>
                 </field>
           </field>
