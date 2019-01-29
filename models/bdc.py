@@ -30,3 +30,4 @@ class PurchaseOrder(models.Model):
 class Product(models.Model):
     _inherit = ['product.template']
 
+#
