@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+  <data>
+      <record id="view_form_mrp_bom_inherited" model="ir.ui.view">
+          <field name="name">MRP BOM FORM view</field>
+          <field name="model">mrp.bom</field>
+          <field name="inherit_id" ref="mrp.mrp_bom_form_view"/>
+          <field name="arch" type="xml">
+
+              <!-- Informations ajoutées dans le table de la fiche BOM (Nomenclature)  -->
+
+              <xpath expr="//tree/field[@name='product_qty']" position="before">
+                    <field name="bom_product_cost" string="Prix unitaire"/>
+              </xpath>
+
+              <xpath expr="//tree/field[@name='product_uom']" position="after">
+                    <field name="bom_total_cost" string="Coût total pour l'article"/>
+              </xpath>
+
+                <!-- Information ajoutée en haut à droite de la fiche BOM (Nomenclature)   -->
+
+              <xpath expr="//field[@name='type']" position="after">
+                    <field name="bom_unit_cost" string="Coût à l'unité"/>
+              </xpath>
+
+              <xpath expr="//field[@name='type']" position="after">
+                    <field name="bom_full_total_cost" string="Coût total"/>
+              </xpath>
+
+          </field>
+      </record>
+
+        <!-- Ajout du coût de production du lot dans la vue tree -->
+
+      <record id="view_tree_mrp_bom_inherited" model="ir.ui.view">
+          <field name="name">MRP BOM FORM view</field>
+          <field name="model">mrp.bom</field>
+          <field name="inherit_id" ref="mrp.mrp_bom_tree_view"/>
+          <field name="arch" type="xml">
+
+              <!-- Informations ajoutées dans la vue TREE de la nomenclature -->
+
+                <field name="product_uom" position="after">
+                    <field name="bom_full_total_cost" string="Coût de production" />
+                </field>
+
+          </field>
+      </record>
+
+
+  </data>
+</openerp>
+
+

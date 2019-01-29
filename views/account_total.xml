@@ -11,9 +11,11 @@
                 <field name="function" position="before">
                   <field name="budget_CE" string="Budget Economat"/>
                   <field name="budget_CP" string="Budget Propre"/>
-                  <field name="budget_test" string="Budget" />
-                  <field name="budget_restant" string="Budget restant"/>
+                  <field name="budget_test" string="Budget total"/>
                 </field>
+
+
+
           </field>
       </record>
 
@@ -48,7 +50,7 @@
 
 
 
-                  <!-- 2222222222222222222222222222222222222222222222 Bouton Total des factures sur le BUDGET PROPRE -->
+                  <!-- 2222222222222222222222222222222222222222 Bouton Total des factures sur le BUDGET PROPRE -->
 
                   <button type="action" class="oe_stat_button" id="total_invoiced_tvac_CP" icon="fa-pencil-square-o" name="254" attrs="{'invisible': [('customer', '=', False)]}" context="{'search_default_partner_id': active_id,'default_partner_id': active_id}">
                         <div class="o_form_field o_stat_info">
@@ -66,7 +68,7 @@
                         </div>
                     </button>
 
-                  <!-- 44444444444444444444444444444444444444444444 Bouton solde sur CREDIT ECONOMAT -->
+                  <!-- 44444444444444444444444444444444444444444444 Bouton solde sur CREDIT ECONOMAT (BE) 444444444444444444444444 -->
 
                   <button type="action" class="oe_stat_button" id="budget_restant_CE" icon="fa-euro" name="254" attrs="{'invisible': [('customer', '=', False)]}" context="{'search_default_partner_id': active_id,'default_partner_id': active_id}">
                         <div class="o_form_field o_stat_info">
@@ -75,7 +77,7 @@
                         </div>
                   </button>
 
-                  <!-- 555555555555555555555555555555555555555555555 Bouton Solde sur CREDIT PROPRE -->
+                  <!-- 555555555555555555555555555555555555555555555 Bouton Solde sur CREDIT PROPRE (BP) 55555555555555555555555555 -->
 
                   <button type="action" class="oe_stat_button" id="budget_restant_CP" icon="fa-euro" name="254" attrs="{'invisible': [('customer', '=', False)]}" context="{'search_default_partner_id': active_id,'default_partner_id': active_id}">
                         <div class="o_form_field o_stat_info">

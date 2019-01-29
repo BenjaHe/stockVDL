@@ -1,0 +1,37 @@
+<odoo>
+
+    <template id="assets_frontend" inherit_id="website.assets_frontend" name="Website Portal Sale">
+      <xpath expr="." position="inside">
+          <link rel='stylesheet' href='/website_portal_sale/static/src/less/website_portal_sale.less'/>
+      </xpath>
+    </template>
+
+    <template id="account" name="Account" inherit_id="website_portal.account">
+        <xpath expr="//div[contains(@class,'o_my_documents')]" position="inside">
+            <t t-call="StockVDLdev.partner" />
+        </xpath>
+    </template>
+
+
+    <template id="partner" name="Partner">
+        <h3 class="page-header">Informations concernant vos budgets</h3>
+
+            <div class="o_form_field o_stat_info">
+                  <span class="o_stat_text">Budget propre initial : </span>
+                  <strong><span t-esc="user_id.parent_id.budget_test" />  <span class="o_stat_text">  € </span> </strong>
+            </div>
+<hr></hr>
+            <div class="o_form_field o_stat_info">
+                  <span class="o_stat_text">Budget restant : </span>
+                  <strong><span t-esc="user_id.parent_id.budget_restant" />  <span class="o_stat_text">  € </span> </strong>
+            </div>
+
+<hr></hr>
+            <div class="o_form_field o_stat_info">
+                  <span class="o_stat_text">Somme total de vos achats : </span>
+                  <strong><span t-esc="user_id.parent_id.total_invoiced_tvac" />  <span class="o_stat_text">  € </span> </strong>
+            </div>
+
+    </template>
+
+</odoo>

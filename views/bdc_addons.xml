@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <!-- ############ ACTION to open specific view Bon de commande  ################" -->
+
+        <act_window id="action_bdc_custom_comptable"
+	        name="Panier client à valider par le comptable"
+	        res_model="sale.order"
+	        view_mode="tree,form"
+
+            />
+
+        <!--   domain="[('comptable_id.id','=',uid)]"   -->
+
+        <act_window id="action_bdc_custom_directeur"
+	        name="BdC fournisseur à valider par la direction"
+	        res_model="purchase.order"
+	        view_mode="tree,form"
+
+            />
+
+        <!--  domain="[('directeur_id','=',uid)]"   -->
+
+        <!-- ############# MENU to open specific view Bons de commande ########################  -->
+
+
+         <menuitem id="menu_bdc_comptable_list"
+          name="Panier client à valider par le comptable"
+          action="action_bdc_custom_comptable"
+          groups="group_bdc_comptable"
+          sequence="5"/>
+        <!--  groups="group_bdc_comptable" -->
+
+        <menuitem id="menu_bdc_direction_list"
+          name="BdC fournisseur à valider par la direction"
+          action="action_bdc_custom_directeur"
+          groups="group_bdc_directeur"
+          sequence="20"/>
+
+
+        <!-- ################################################## OVER RIDE les ACT WINDOWS pour ne pas que les comptables et la direction voient d'autres menus que les leurs  ########  -->
+
+
+
+
+
+    </data>
+</openerp>

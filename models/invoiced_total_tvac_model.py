@@ -21,6 +21,7 @@ class ResPartner(models.Model):
     # budget - total CP : calcul sur le budget "Crédit Propre" : CP
     # budget - total CE : calcul sur le budget "Crédit Economat" : CE
 
+
     budget_test = fields.Monetary('Budget en cours', required=False)
 
     budget_CE = fields.Monetary('Budget économat', required=False)
@@ -35,6 +36,16 @@ class ResPartner(models.Model):
 
     total_invoiced_tvac_CE = fields.Monetary(compute='_invoice_total_tvac_CE', string="Total Invoiced CE",
                                              groups='account.group_account_invoice')
+
+    budget_restant_CP = fields.Monetary(compute='_compute_budget_restant_CP', string="Budget restant")
+
+    budget_restant_CP_web = fields.Monetary(compute='_compute_budget_restant_CP_web',
+                                            string='Budget restant CP pour le web',
+                                            required=False)
+
+    total_invoiced_tvac_CP_web = fields.Monetary(compute='_compute_total_invoiced_tvac_cp_web',
+                                            string='Total facturé CP pour le web',
+                                            required=False)
 
     # TOTAL_INVOICED_TVAC : Calcul du total des factures TVAC (tous budgets confondus et année en cours)
 
@@ -92,6 +103,7 @@ class ResPartner(models.Model):
         for partner in self:
             partner.budget_restant = partner.budget_test - partner.total_invoiced_tvac
 
+
     # ______________________________________________________________________________________________#
     # TOTAL_INVOICED_TVAC_CP : Calcul du total des factures TVAC sur le budget "CREDIT PROPRE"   #
     # ---------------------------------------------------------------------------------------------#
@@ -138,13 +150,26 @@ class ResPartner(models.Model):
     # Calcul du budget restant qui est la différence entre le budget donné et la somme des factures de l'année en
     # cours TVAC pour le budget "Crédit Economat"
 
-    budget_restant_CP = fields.Monetary(compute='_compute_budget_restant_CP', string="Budget restant")
+
+####################################################
+##          TEST ICI DU NOUVEAU ALGO
+
+    @api.multi
+    @api.depends('total_invoiced_tvac_CP')
+    def _compute_total_invoiced_tvac_cp_web(self):
+        for partner in self:
+            partner.total_invoiced_tvac_CP_web = partner.total_invoiced_tvac_CP
 
     @api.depends('total_invoiced_tvac_CP', 'budget_CP')
     def _compute_budget_restant_CP(self):
-        for partner in self:
-            partner.budget_restant_CP = partner.budget_CP - partner.total_invoiced_tvac_CP
+            for partner in self:
+                partner.budget_restant_CP = partner.budget_CP - partner.total_invoiced_tvac_CP
 
+    @api.multi
+    @api.depends('budget_restant_CP')
+    def _compute_budget_restant_CP_web(self):
+        for partner in self:
+            partner.budget_restant_CP_web = partner.budget_restant_CP
             # ______________________________________________________________________________________________#
             # TOTAL_INVOICED_TVAC_CE : Calcul du total des factures TVAC sur le budget "CREDIT ECONOMAT"   #
             # ---------------------------------------------------------------------------------------------#
@@ -195,6 +220,7 @@ class ResPartner(models.Model):
 
     budget_restant_CE = fields.Monetary(compute='_compute_budget_restant_CE', string="Budget restant CE")
 
+    @api.one
     @api.depends('total_invoiced_tvac_CE', 'budget_CE')
     def _compute_budget_restant_CE(self):
         for partner in self:

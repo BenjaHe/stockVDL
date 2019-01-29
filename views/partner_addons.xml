@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+  <data>
+      <record id="view_form_addons_partner_inherited" model="ir.ui.view">
+          <field name="name">Addons Contacts Form</field>
+          <field name="model">res.partner</field>
+          <field name="inherit_id" ref="base.view_partner_form"/>
+          <field name="arch" type="xml">
+
+            <field name="website" position="after">
+                  <field name="comptable" string="Comptable"/>
+                  <field name="directeur" string="Directeur"/>
+
+            </field>
+
+
+
+          </field>
+      </record>
+  </data>
+</openerp>

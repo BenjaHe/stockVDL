@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Stock VDL",
+    'name': "Stock VDL_dev",
 
     'summary': """
         Extention du module Stock Picking et Res.Partner pour les besoins de l'Economat.""",
@@ -14,17 +14,26 @@
     'author': "Roland Neyrinck",
     'website': "",
 
-    'category': 'Ville de Liège',
+    'category': 'Uncategorized',
     'version': '1.0',
 
     # any module necessary for this one to work correctly
     'depends': ['base', 'sale_stock', 'sale', 'purchase', 'stock', 'account','website', 'website_sale','payment','payment_transfer', 'mrp','website','website_portal_sale'],
 
-    'data': ['views/magasin_views.xml',
+    'data': ['security/bdc_custom_security.xml',
+             'views/magasin_views.xml',
              'views/report_economat.xml',
              'views/account_total.xml',
              'views/payment_acquirer_addons.xml',
-             'views/mrp_production_form_inherit.xml'
+             'views/bom_line_custom.xml',
+             'views/sale_order_view_inherit.xml',
+             'views/web_customer_informations.xml',
+             'views/partner_addons.xml',
+             'views/bdc_addons.xml',
+             'views/purchase_order_view_inherited.xml',
+             'views/mrp_production_form_inherit.xml',
              ],
 
 }
+
+# 'views/purchase_order_view_inherited.xml'

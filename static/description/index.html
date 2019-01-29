@@ -1,4 +1,46 @@
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan"> ! INFORMATION IMORTANTE </h2>
+        <h3 class="oe_slogan">! Actions de parametrage necessaires au bon fonctionnement</h3>
+        <div class="oe_span12">
+            <p class="oe_mt32">
+                Pour que les clients du web-shop puisse voir "leur compte", il faut desactiver une regle de securite
+                sur les enregistrement : 1) mode debug 2) configuration -> securite -> Regles sur les enregistrement
+                3) nom de la regle : res_partner:portal/public: read access on my commercial partner -> modifier -> decocher la case "Actif".
+                Si cette action n'est pas faite, l'application risque de planter pour tous les utilisateurs !!
+            </p>
+        </div>
+    </div>
+</section>
 
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan">Web-shop</h2>
+        <h3 class="oe_slogan">Le web-shop interne de la Ville de Liege</h3>
+        <div class="oe_span12">
+            <p class="oe_mt32">
+               <p> Acces a un web-shop proposant les articles directement disponibles a l'Economat ou disponible chez un fournisseur officiel
+            (fourniture sur marche stock). </p>
+            <p>Les commandes sont ensuite validees par le comptable referent et par la direction.</p>
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container">
+    <div class="oe_row oe_spaced">
+        <h2 class="oe_slogan">Renseigne la consommation budgetaire du client</h2>
+        <h3 class="oe_slogan">Modifie le module "Account" et "Partner".</h3>
+        <div class="oe_span12">
+            <p class="oe_mt32">
+                Ajoute sur la fiche du client (res.partner) les champs calcules suivant : <br>
+                 - le total des commandes tvac passee dans l'annee en cours, <br>
+                 - le budget qui lui est alloue (annee en cours) <br>
+                 - le solde qui lui reste (budget/commandes).
+            </p>
+        </div>
+    </div>
+</section>
 
 <section class="oe_container">
     <div class="oe_row oe_spaced">
@@ -16,18 +58,5 @@
     </div>
 </section>
 
-<section class="oe_container">
-    <div class="oe_row oe_spaced">
-        <h2 class="oe_slogan">Renseigne la consommation budgetaire du client</h2>
-        <h3 class="oe_slogan">Modifie le module "Account" et "Partner".</h3>
-        <div class="oe_span12">
-            <p class="oe_mt32">
-                Ajoute sur la fiche du client (res.partner) les champs calcules suivant : <br>
-                 - le total des commandes tvac passee dans l'annee en cours, <br>
-                 - le budget qui lui est alloue (annee en cours) <br>
-                 - le solde qui lui reste (budget - commandes).
-            </p>
-        </div>
-    </div>
-</section>
+
 
