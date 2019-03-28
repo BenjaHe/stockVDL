@@ -16,18 +16,36 @@ class ResPartner(models.Model):
 class Sale(models.Model):
     _inherit = ['sale.order']
 
-    comptable_id = fields.Many2one("res.users", related='partner_id.comptable', string="Comptable", readonly=True, required=False)
-    directeur_id = fields.Many2one("res.users", related='partner_id.directeur', string="Directeur", readonly=True, required=False)
+    comptable_id = fields.Many2one("res.users", related='partner_id.comptable', string="Comptable", readonly=True,
+                                   required=False)
+    directeur_id = fields.Many2one("res.users", related='partner_id.directeur', string="Directeur", readonly=True,
+                                   required=False)
 
 
 class PurchaseOrder(models.Model):
     _inherit = ['purchase.order']
 
-    directeur_id = fields.Many2one("res.users",related='dest_address_id.directeur', string="Directeur", readonly=True, required=False)
-    comptable_id = fields.Many2one("res.users",related='dest_address_id.comptable', string="Directeur", readonly=True, required=False)
+    directeur_id = fields.Many2one("res.users", related='dest_address_id.directeur', string="Directeur",
+                                   readonly=True,
+                                   required=False)
+    comptable_id = fields.Many2one("res.users", related='dest_address_id.comptable', string="Directeur",
+                                   readonly=True,
+                                   required=False)
+    tel_comptable_id = fields.Char("res.users", related='dest_address_id.comptable.mobile',
+                                   readonly=True,
+                                   required=False)
 
 
 class Product(models.Model):
     _inherit = ['product.template']
 
-#
+
+
+class invoice(models.Model):
+    _inherit = ['account.invoice']
+
+    @api.one
+    def bouton_draft(self):
+        self.write({
+            'state': 'draft'
+        })
