@@ -17,7 +17,7 @@
         <record id="group_bdc_view_all" model="res.groups">
               <field name="name">Manager de tous les achats</field>
               <field name="category_id" ref="base.module_category_purchase_management"/>
-              <field name="implied_ids" eval="[(4, ref('group_purchase_user'))]"/>
+              <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
         </record>
 
         <record id="bdc_own_comptable" model="ir.rule">
