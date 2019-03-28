@@ -9,3 +9,4 @@ import sale_inherit
 import bdc
 import mrp_production_inherit
 import mail_mail
+import purchase_inherit
