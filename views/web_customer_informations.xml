@@ -8,7 +8,7 @@
 
     <template id="account" name="Account" inherit_id="website_portal.account">
         <xpath expr="//div[contains(@class,'o_my_documents')]" position="inside">
-            <t t-call="StockVDLdev.partner" />
+            <t t-call="stockVDL.partner" />
         </xpath>
     </template>
 
