@@ -32,11 +32,11 @@
           sequence="5"/>
         <!--  groups="group_bdc_comptable" -->
 
-    <!--    <menuitem id="menu_bdc_direction_list"
+        <menuitem id="menu_bdc_direction_list"
           name="BdC fournisseur à valider par la direction"
           action="action_bdc_custom_directeur"
           groups="group_bdc_directeur"
-          sequence="20"/>  -->
+          sequence="20"/>
 
 
         <!-- ################################################## OVER RIDE les ACT WINDOWS pour ne pas que les comptables et la direction voient d'autres menus que les leurs  ########  -->
