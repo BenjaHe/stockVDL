@@ -44,7 +44,7 @@
               <field name="company_id" position="after">
                     <field name="dest_address_id" string="Client interne"/>
                     <field name="directeur_id" string="Directeur responsable"/>
-                    <field name="comptable_id" string="Comptable responsable"/>
+               <!--     <field name="comptable_id" string="Comptable responsable"/>  -->
                     <field name="tel_comptable_id" string="Téléphone du comptable"/>
               </field>
 
