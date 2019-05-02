@@ -11,6 +11,7 @@
             <field name="website" position="after">
                   <field name="comptable" string="Comptable"/>
                   <field name="directeur" string="Directeur"/>
+                  <field name="num_comptable" string="Numéro du comptable"/>
 
             </field>
 
