@@ -11,7 +11,7 @@ class ResPartner(models.Model):
 
     comptable = fields.Many2one('res.users', string='Comptable attitré', required=False, track_visibility='onchange')
     directeur = fields.Many2one('res.users', string='Directeur validateur', required=False, track_visibility='onchange')
-    num_comptable = fields.Char(string='Numéro du comptable', required=False, track_visibility='onchange', help='A renseigner uniquement pour les comptables.')
+  #  num_comptable = fields.Char(string='Numéro du comptable', required=False, track_visibility='onchange', help='A renseigner uniquement pour les comptables.')
   #  num_mon_comptable = fields.Char(string='Numéro de mon comptable', required=False, related='comptable.num_comptable', help='Le numéro du comptable qui m est renseigné.')
 
 class Sale(models.Model):
