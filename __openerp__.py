@@ -33,7 +33,8 @@
              'views/bdc_addons.xml',
              'views/purchase_order_view_inherited.xml',
              'views/mrp_production_form_inherit.xml',
-             'views/finition_mrp_views.xml'
+             'views/finition_mrp_views.xml',
+             'views/report_purchase_order_custom_vdl.xml'
              ],
 
 }
