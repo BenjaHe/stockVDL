@@ -14,12 +14,12 @@
                   <field name="description" string="Travail à réaliser"/>
               </field>
 
-               <!-- Liste des finitions
+               <!-- Liste des finitions -->
                 <field name="location_dest_id" position="after">
                     <field name="finition_ids" widget="many2many_tags"/>
-                </field>  -->
+                </field>
 
-                <!-- Cases à cocher pour la livraison
+                <!-- Cases à cocher pour la livraison -->
                 <group>
                     <xpath expr="//field[@name='location_src_id']" position="after">
                         <group>
@@ -28,7 +28,7 @@
                             <field name="mo_cost" string="Coût de production"/>
                         </group>
                     </xpath>
-                </group>  -->
+                </group>
 
 
 
