@@ -12,7 +12,7 @@
                   <field name="comptable" string="Comptable"/>
                   <field name="directeur" string="Directeur"/>
                   <field name="num_comptable" string="Numéro du comptable"/>
-                  <field name="num_mon_comptable" string="Numéro du comptable associé"/>
+                  <field name="num_mon_comptable" string="Numéro du comptable associé" attrs="{'readonly'}"/>
 
             </field>
 
