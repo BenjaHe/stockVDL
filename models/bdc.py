@@ -11,8 +11,8 @@ class ResPartner(models.Model):
 
     comptable = fields.Many2one('res.users', string='Comptable attitré', required=False, track_visibility='onchange')
     directeur = fields.Many2one('res.users', string='Directeur validateur', required=False, track_visibility='onchange')
-    num_comptable = fields.Char(string='Numéro du comptable', required=False, track_visibility='onchange', help='A renseigner uniquement pour les comptables.')
-    num_mon_comptable = fields.Char(string='Numéro de mon comptable', required=False, related='comptable.num_comptable', help='Le numéro du comptable qui m est renseigné.')
+#    num_comptable = fields.Char(string='Numéro du comptable', required=False, track_visibility='onchange', help='A renseigner uniquement pour les comptables.')
+#    num_mon_comptable = fields.Char(string='Numéro de mon comptable', required=False, related='comptable.num_comptable', help='Le numéro du comptable qui m est renseigné.')
 
 class Sale(models.Model):
     _inherit = ['sale.order']
@@ -35,9 +35,9 @@ class PurchaseOrder(models.Model):
     tel_comptable_id = fields.Char("res.users", related='dest_address_id.comptable.mobile',
                                    readonly=True,
                                    required=False)
-    num_comptable_id = fields.Char("res.users", related='dest_address_id.comptable.num_comptable',
-                                   readonly=True,
-                                   required=False)
+#    num_comptable_id = fields.Char("res.users", related='dest_address_id.comptable.num_comptable',
+#                                   readonly=True,
+#                                  required=False)
 
 class Product(models.Model):
     _inherit = ['product.template']
