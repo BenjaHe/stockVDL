@@ -36,8 +36,8 @@ class PurchaseOrder(models.Model):
                                    readonly=True,
                                    required=False)
 #    num_comptable_id = fields.Char("res.users", related='dest_address_id.comptable.num_comptable',
-                                   readonly=True,
-                                   required=False)
+#                                   readonly=True,
+#                                   required=False)
 
 class Product(models.Model):
     _inherit = ['product.template']
