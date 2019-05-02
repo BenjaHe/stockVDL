@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 from openerp import api, fields, models
 
 class mrp_production(models.Model):
@@ -13,7 +15,7 @@ class mrp_production(models.Model):
 
     move_lines = fields.One2many('stock.move', 'raw_material_production_id', 'Machin to Consume', readonly=False)
 
-    livrer = fields.Boolean(string='Doit ête livre ?', required=False, default=False)
+    livrer = fields.Boolean(string='Doit ête livré ?', required=False, default=False)
     prevenir = fields.Boolean(string='Le client vient chercher ?', required=False, default=False,
                               help="Le client se charge de venir chercher le travail. Il faut le prévenir qu'il peut venir le chercher.")
 
