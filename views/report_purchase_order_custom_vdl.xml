@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+
+        <template id="report_purchase_order_custom_vdl"
+                  inherit_id="purchase.report_purchaseorder_document">
+
+            <xpath expr="//div[@class='row mt32 mb32']" position="after">
+                <group>
+
+                    <h4>Informations à rappeler OBLIGATOIREMENT sur votre facture :</h4>
+
+                    <strong>Comptable : </strong>
+                    <span t-field="o.comptable_id"/> <br></br>
+
+                    <strong>Numéro de téléphone du comptable : </strong>
+                    <span t-field="o.tel_comptable_id"/> <br></br>
+
+                    <strong>Article budgétaire : </strong>
+                    <span t-field="o.article_budgetaire"/> <br></br>
+
+                    <strong>Numéro d'engagement : </strong>
+                    <span t-field="o.num_engagement"/> <br></br>
+                </group>
+                <group>
+                     <br>
+                </br>
+                     <br>
+                </br>
+                     <br>
+                </br>
+                </group>
+
+            </xpath>
+
+        </template>
+    </data>
+</openerp>
