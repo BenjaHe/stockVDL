@@ -13,6 +13,9 @@
                     <strong>Comptable : </strong>
                     <span t-field="o.comptable_id"/> <br></br>
 
+                    <strong>Numéro d'identification du comptable : </strong>
+                    <span t-field="o.num_comptable_id"/> <br></br>
+
                     <strong>Numéro de téléphone du comptable : </strong>
                     <span t-field="o.tel_comptable_id"/> <br></br>
 
