@@ -19,7 +19,7 @@
                     <field name="finition_ids" widget="many2many_tags"/>
                 </field>  -->
 
-                <!-- Cases à cocher pour la livraison -->
+                <!-- Cases à cocher pour la livraison
                 <group>
                     <xpath expr="//field[@name='location_src_id']" position="after">
                         <group>
@@ -28,7 +28,7 @@
                             <field name="mo_cost" string="Coût de production"/>
                         </group>
                     </xpath>
-                </group>
+                </group>  -->
 
 
 
