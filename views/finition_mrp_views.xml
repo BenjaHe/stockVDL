@@ -1,0 +1,29 @@
+<?xml version="1.0"  encoding="utf-8"?>
+
+<openerp>
+    <record id="view_tree_finition_mrp" model="ir.ui.view">
+        <field name="name">finition_mrp.tree</field>
+        <field name="model">finition_mrp</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_form_finition_mrp" model="ir.ui.view">
+        <field name="name">finition_mrp.form</field>
+        <field name="model">finition_mrp</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group name="group_top">
+                        <field name="name"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+</openerp>

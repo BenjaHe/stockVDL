@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "Stock VDL_dev",
+    'name': "Stock VDL",
 
     'summary': """
         Extention du module Stock Picking et Res.Partner pour les besoins de l'Economat.""",
@@ -21,6 +21,7 @@
     'depends': ['base', 'sale_stock', 'sale', 'purchase', 'stock', 'account','website', 'website_sale','payment','payment_transfer', 'mrp','website','website_portal_sale'],
 
     'data': ['security/bdc_custom_security.xml',
+             'security/ir.model.access.csv',
              'views/magasin_views.xml',
              'views/report_economat.xml',
              'views/account_total.xml',
@@ -32,6 +33,7 @@
              'views/bdc_addons.xml',
              'views/purchase_order_view_inherited.xml',
              'views/mrp_production_form_inherit.xml',
+             'views/finition_mrp_views.xml'
              ],
 
 }
