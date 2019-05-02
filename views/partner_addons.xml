@@ -9,14 +9,11 @@
           <field name="arch" type="xml">
 
             <field name="website" position="after">
-                  <field name="comptable" string="Comptable"/>
-                  <field name="directeur" string="Directeur"/>
-                  <field name="num_comptable" string="Numéro du comptable"/>
-                  <field name="num_mon_comptable" string="Numéro du comptable associé" readonly="1"/>
-
+                <field name="comptable" string="Comptable"/>
+                <field name="num_comptable" string="Numéro du comptable (si comptable)"/>
+                <field name="num_mon_comptable" string="Numéro du comptable associé" readonly="1"/>
+                <field name="directeur" string="Directeur"/>
             </field>
-
-
 
           </field>
       </record>
