@@ -35,7 +35,7 @@ class PurchaseOrder(models.Model):
     tel_comptable_id = fields.Char("res.users", related='dest_address_id.comptable.mobile',
                                    readonly=True,
                                    required=False)
-    num_comptable_id = fields.Char("res.users", related='dest_address_id.comptable.num_comptable',
+#    num_comptable_id = fields.Char("res.users", related='dest_address_id.comptable.num_comptable',
                                    readonly=True,
                                    required=False)
 
