@@ -14,6 +14,23 @@
                   <field name="description" string="Travail à réaliser"/>
               </field>
 
+               <!-- Liste des finitions -->
+                <field name="location_dest_id" position="after">
+                    <field name="finition_ids" widget="many2many_tags"/>
+                </field>
+
+                <!-- Cases à cocher pour la livraison -->
+                <group>
+                    <xpath expr="//field[@name='location_src_id']" position="after">
+                        <group>
+                            <field name="livrer" string="A livrer ?"/>
+                            <field name="prevenir" string="Prévenir le client ?"/>
+                            <field name="mo_cost" string="Coût de production"/>
+                        </group>
+                    </xpath>
+                </group>
+
+
 
           </field>
       </record>
@@ -30,8 +47,21 @@
                   <field name="description" string="Travail à réaliser"/>
               </field>
 
-
           </field>
       </record>
+
+
+      <!-- Action de l'option de MENU Finitions -->
+        <act_window id="action_finition"
+                    name="Liste des finitions"
+                    res_model="finition_mrp"
+                    view_mode="tree,form"/>
+
+        <!-- Lien de MENU Finitions -->
+        <menuitem id="menu_finition"
+                  name="Finitions"
+                  action="action_finition"
+                  parent="mrp.menu_mrp_manufacturing"/>
+
   </data>
 </openerp>
