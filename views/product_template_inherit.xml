@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+  <data>
+      <record id="view_form_product_template_inherited" model="ir.ui.view">
+          <field name="name">Addons Contacts Form</field>
+          <field name="model">product.template</field>
+          <field name="inherit_id" ref="product.product_template_form_view"/>
+          <field name="arch" type="xml">
+
+            <field name="list_price" position="after">
+                <field name="prix_tvac_21" string="Prix TVAC (21 %)"/>
+            </field>
+
+          </field>
+      </record>
+  </data>
+</openerp>

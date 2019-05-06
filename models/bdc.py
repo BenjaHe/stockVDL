@@ -42,7 +42,17 @@ class PurchaseOrder(models.Model):
 class Product(models.Model):
     _inherit = ['product.template']
 
+    # Ajout d'un prix TVAC (21 %) --> car les prix sont tous HTVA en ce compris sur le site web
 
+    prix_tvac_21 = fields.Monetary(compute='_prix_tvac_21', string ='Prix TVAC (21 %)',
+                                   readonly=True,
+                                   required=False)
+
+    @api.multi
+    @api.depends('list_price')
+    def _prix_tvac_21(self):
+        for rec in self:
+            rec.prix_tvac_21 = rec.list_price * 1.21
 
 class invoice(models.Model):
     _inherit = ['account.invoice']
