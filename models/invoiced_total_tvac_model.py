@@ -37,6 +37,9 @@ class ResPartner(models.Model):
     total_invoiced_tvac_CE = fields.Monetary(compute='_invoice_total_tvac_CE', string="Total Invoiced CE",
                                              groups='account.group_account_invoice')
 
+    budget_cartouche = fields.Monetary(string='Budget cartouche',
+                                       required=False)
+
     budget_restant_CP = fields.Monetary(compute='_compute_budget_restant_CP', string="Budget restant")
 
     budget_restant_CP_web = fields.Monetary(compute='_compute_budget_restant_CP_web',
