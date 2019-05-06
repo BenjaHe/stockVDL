@@ -48,7 +48,7 @@ class Product(models.Model):
                                    readonly=True,
                                    required=False)
 
-    @api.multi
+
     @api.depends('list_price')
     def _prix_tvac_21(self):
         for rec in self:
