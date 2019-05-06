@@ -44,15 +44,13 @@ class Product(models.Model):
 
     # Ajout d'un prix TVAC (21 %) --> car les prix sont tous HTVA en ce compris sur le site web
 
-    prix_tvac_21 = fields.Monetary(compute='_prix_tvac', string ='Prix TVAC (21 %)',
+    prix_tvac = fields.Monetary(compute='_prix_tvac', string ='Prix TVAC (21 %)',
                                    readonly=True,
                                    required=False)
-
-
     @api.depends('list_price')
     def _prix_tvac(self):
         for rec in self:
-            rec.prix_tvac_21 = rec.list_price * 1.21
+            rec.prix_tvac = rec.list_price * 1.21
 
 class invoice(models.Model):
     _inherit = ['account.invoice']
