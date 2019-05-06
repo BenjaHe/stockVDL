@@ -47,6 +47,8 @@ class Product(models.Model):
     prix_tvac = fields.Monetary(compute='_prix_tvac', string ='Prix TVAC (21 %)',
                                    readonly=True,
                                    required=False)
+
+    @api.one
     @api.depends('list_price')
     def _prix_tvac(self):
         for rec in self:
