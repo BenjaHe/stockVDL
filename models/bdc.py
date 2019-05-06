@@ -49,7 +49,7 @@ class Product(models.Model):
     @api.depends('list_price')
     def _prix_tvac(self):
         for rec in self:
-            rec.prix_tvac = rec.list_price * 1.21
+            rec.prix_tvac = rec.list_price
 
 class invoice(models.Model):
     _inherit = ['account.invoice']

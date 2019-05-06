@@ -11,4 +11,3 @@ import mrp_production_inherit
 import mail_mail
 import purchase_inherit
 import finition_mrp
-import mail_mail
