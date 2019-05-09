@@ -22,8 +22,8 @@ class PurchaseOrder(models.Model):
         ('cancel', 'Cancelled')
     ], string='Status', readonly=True, index=True, copy=False, default='draft', track_visibility='onchange')
 
-    article_budgetaire = fields.Char('Article budgétaire', required=False, track_visibility='onchange')
-    num_engagement = fields.Char('Numero engagement', required=False, track_visibility='onchange')
+    article_budgetaire = fields.Char('Article budgétaire', required=True, track_visibility='onchange')
+    num_engagement = fields.Char('Numero engagement', required=True, track_visibility='onchange')
 
     @api.multi
     def action_po_send(self):

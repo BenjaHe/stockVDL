@@ -23,7 +23,7 @@
     'data': ['security/bdc_custom_security.xml',
              'security/ir.model.access.csv',
              'views/magasin_views.xml',
-             'views/report_economat.xml',
+             'reports/report_economat.xml',
              'views/account_total.xml',
              'views/payment_acquirer_addons.xml',
              'views/bom_line_custom.xml',
@@ -34,7 +34,7 @@
              'views/purchase_order_view_inherited.xml',
              'views/mrp_production_form_inherit.xml',
              'views/finition_mrp_views.xml',
-             'views/report_purchase_order_custom_vdl.xml',
+             'reports/report_purchase_order_custom_vdl.xml',
              'views/product_template_inherit.xml'
              ],
 

@@ -2,6 +2,8 @@
 <openerp>
     <data>
 
+        <!-- *********** MODIFICATION DU BON DE COMMANDE FOURNISSEUR POUR AJOUTER LES INFOS SUIVANTES ********   -->
+
         <template id="report_purchase_order_custom_vdl"
                   inherit_id="purchase.report_purchaseorder_document">
 
