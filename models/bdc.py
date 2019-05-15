@@ -22,6 +22,9 @@ class Sale(models.Model):
     directeur_id = fields.Many2one("res.users", related='partner_id.directeur', string="Directeur", readonly=True,
                                    required=False)
 
+class SaleOrder(models.Model):
+    _inherit = ['sale.order.line']
+
 
 class PurchaseOrder(models.Model):
     _inherit = ['purchase.order']
