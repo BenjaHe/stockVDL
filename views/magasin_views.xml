@@ -12,7 +12,7 @@
 
               <field name="origin" position="after">
                   <field name="commentaire" string="Commentaire pour la livraison" class="oe_inline"/>
-                  <field name="budget_restant" string="Budget Economat restant" class="oe_inline"/>
+               <!--   <field name="budget_restant" string="Budget Economat restant" class="oe_inline"/> -->
               </field>
 
               <field name="location_dest_id" position="after">
