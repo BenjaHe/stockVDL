@@ -31,9 +31,9 @@
                     <field name="directeur_id" string="Direction" />
                 </xpath>
 
-             <!--   <xpath expr="//field[@name='payment_term_id']" position="attributes">
+                <xpath expr="//field[@name='payment_term_id']" position="attributes">
                         <attribute name="invisible">1</attribute>
-                </xpath>  -->
+                </xpath>
 
              <!--   <xpath expr="//field[@name='payment_acquired_id']" position="attributes">
                         <attribute name="invisible">1</attribute>
