@@ -14,6 +14,10 @@
                   <field name="commentaire" string="Commentaire pour la livraison" class="oe_inline"/>
               </field>
 
+              <field name="location_dest_id" position="after">
+                  <field name="ok_livraison" string="Le client peut-être livré" class="oe_inline"/>
+              </field>
+
 
           </field>
       </record>
