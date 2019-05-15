@@ -1,4 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_finition,finition.users,model_finition_mrp,base.group_user,1,1,1,0
 sale_order_comptable,comptable.users,model_sale_order,base.group_user,1,1,1,0
-sale_order_comptable,comptable.users,model_sale_order.line,base.group_user,1,1,1,0
+sale_order_line_comptable,comptable.order.line.users,model_sale_order_line,base.group_user,1,1,1,0
