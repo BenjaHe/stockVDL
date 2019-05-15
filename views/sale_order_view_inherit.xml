@@ -35,7 +35,7 @@
                         <attribute name="invisible">1</attribute>
                 </xpath>
 
-            <!--    <xpath expr="//field[@name='incoterm']" position="attributes">
+            <!--    <xpath expr="//field[@name='incoterm']" position="attributes">  ==> ne marche pas car dans une autre vue
                         <attribute name="invisible">1</attribute>
                 </xpath>  -->
 
