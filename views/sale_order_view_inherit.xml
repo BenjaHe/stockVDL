@@ -48,7 +48,6 @@
                 </xpath>
 
 
-
             <!--    <field name="payment_term_id" position="after">
                     <field name="comptable_id" string="Comptable responsable"/>
                     <field name="directeur_id" string="Direction" />
