@@ -10,9 +10,9 @@
 
               <!-- Informations ajoutées -->
 
-           <!--   <field name="residual" position="after">
+              <field name="residual" position="after">
                   <field name="payment_acquirer_id_budget" string="Type de budget" class="oe_inline"/>
-              </field>  -->
+              </field>
 
 
           </field>

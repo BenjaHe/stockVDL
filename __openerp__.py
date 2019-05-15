@@ -25,7 +25,7 @@
              'views/magasin_views.xml',
              'reports/report_economat.xml',
              'views/account_total.xml',
-             'views/payment_acquirer_addons.xml',
+
              'views/bom_line_custom.xml',
              'views/sale_order_view_inherit.xml',
              'views/web_customer_informations.xml',
