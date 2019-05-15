@@ -10,5 +10,5 @@ class CommentaireMagasinier (models.Model):
 
     ok_livraison = fields.Boolean('Le client peut être livré', default=False, track_visibility='onchange')
 
-    budget_restant = fields.Float(related='partner_id.parent_id.parent_id.budget_restant_CE', string='Budget restant (économat)')
+  #  budget_restant = fields.Float(related='partner_id.parent_id.parent_id.budget_restant_CE', string='Budget restant (économat)')
 
