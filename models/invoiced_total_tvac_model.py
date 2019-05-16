@@ -183,10 +183,11 @@ class ResPartner(models.Model):
     ##          Pour afficher la somme des achats sur le site web -> pour pourvoir faire un stor=true
     ###########################################################################################################""
 
+    @api.one
     @api.depends('budget_CE', 'budget_restant_CE')
     def _compute_total_invoiced_tvac_ce_web(self):
-        for rec in self:
-            rec.total_invoiced_tvac_CE_web = rec.budget_CE - rec.budget_restant_CE
+        for partner in self:
+            partner.total_invoiced_tvac_CE_web = partner.budget_CE - partner.budget_restant_CE
 
 
             # ______________________________________________________________________________________________#
