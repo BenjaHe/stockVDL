@@ -33,7 +33,7 @@ class ResPartner(models.Model):
 
     total_invoiced_tvac_CP = fields.Monetary(compute='_invoice_total_tvac_CP', string="Total Invoiced CP")
 
-    total_invoiced_tvac_CE = fields.Monetary(compute='_invoice_total_tvac_CE', string="Total Invoiced CE", store=True)
+    total_invoiced_tvac_CE = fields.Monetary(compute='_invoice_total_tvac_CE', string="Total Invoiced CE")
 
     budget_cartouche = fields.Monetary(string='Budget cartouche',
                                        required=False)
