@@ -33,7 +33,7 @@ class ResPartner(models.Model):
 
     total_invoiced_tvac_CP = fields.Monetary(compute='_invoice_total_tvac_CP', string="Total Invoiced CP")
 
-    total_invoiced_tvac_CE = fields.Monetary(compute='_invoice_total_tvac_CE', string="Total Invoiced CE")
+    total_invoiced_tvac_CE = fields.Monetary(compute='_invoice_total_tvac_CE', string="Total Invoiced CE", store=True)
 
     budget_cartouche = fields.Monetary(string='Budget cartouche',
                                        required=False)
@@ -219,7 +219,7 @@ class ResPartner(models.Model):
     # Calcul du budget restant qui est la différence entre le budget donné et la somme des factures de
     # l'année en cours TVAC pour le budget "Crédit Economat".
 
-    budget_restant_CE = fields.Monetary(compute='_compute_budget_restant_CE', string="Budget restant CE")
+    budget_restant_CE = fields.Monetary(compute='_compute_budget_restant_CE', string="Budget restant CE", store=True)
 
     @api.one
     @api.depends('total_invoiced_tvac_CE', 'budget_CE')
