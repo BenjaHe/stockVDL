@@ -19,19 +19,25 @@
         <h3 class="page-header">Informations concernant vos budgets</h3>
 
             <div class="o_form_field o_stat_info">
-                  <span class="o_stat_text">Budget propre initial : </span>
-                  <strong><span t-esc="user_id.parent_id.budget_test" />  <span class="o_stat_text">  € </span> </strong>
+                  <span class="o_stat_text">Les données exposées le sont pour le service : </span>
+                  <strong><span t-esc="user_id.parent_id.name" /> </strong>
+            </div>
+<hr></hr>
+
+            <div class="o_form_field o_stat_info">
+                  <span class="o_stat_text">Montant de l'enveloppe Economat initial : </span>
+                  <strong><span t-esc="user_id.parent_id.budget_CE" />  <span class="o_stat_text">  € </span> </strong>
             </div>
 <hr></hr>
             <div class="o_form_field o_stat_info">
-                  <span class="o_stat_text">Budget restant : </span>
-                  <strong><span t-esc="user_id.parent_id.budget_restant" />  <span class="o_stat_text">  € </span> </strong>
+                  <span class="o_stat_text">Budget restant sur l'enveloppe Economat : </span>
+                  <strong><span t-esc="user_id.parent_id.budget_restant_CE" />  <span class="o_stat_text">  € </span> </strong>
             </div>
 
 <hr></hr>
             <div class="o_form_field o_stat_info">
-                  <span class="o_stat_text">Somme total de vos achats : </span>
-                  <strong><span t-esc="user_id.parent_id.total_invoiced_tvac" />  <span class="o_stat_text">  € </span> </strong>
+                  <span class="o_stat_text">Somme total de vos achats sur l'enveloppe Economat : </span>
+                  <strong><span t-esc="user_id.parent_id.total_invoiced_tvac_CE" />  <span class="o_stat_text">  € </span> </strong>
             </div>
 
     </template>
