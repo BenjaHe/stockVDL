@@ -16,7 +16,11 @@
                         <attribute name="invisible">1</attribute>
                 </xpath>
 
-                <xpath expr="//button[@name='print_quotation']" position="attributes">
+                <xpath expr="//button[@name='print_quotation'][1]" position="attributes">
+                        <attribute name="invisible">1</attribute>
+                </xpath>
+
+                <xpath expr="//button[@name='print_quotation'][2]" position="attributes">
                         <attribute name="invisible">1</attribute>
                 </xpath>
 
