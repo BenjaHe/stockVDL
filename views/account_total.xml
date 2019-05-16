@@ -13,6 +13,7 @@
                   <field name="budget_CP" string="Budget Papier"/>
                   <field name="budget_cartouche" string="Budget Cartouche"/>
                   <field name="budget_test" string="Budget Total"/>
+                    <field name="total_invoiced_tvac_CE_web" string="budget CE_WEB"/>
                 </field>
 
 
