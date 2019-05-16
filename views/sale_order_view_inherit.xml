@@ -22,7 +22,7 @@
 
 
 
-                <xpath expr="//button[@name='action_quotation_send']" position="replace">
+                <xpath expr="//button[@name='%(action_view_sale_advance_payment_inv)d']" position="replace">
                      <button name="%(action_view_sale_advance_payment_inv)d" string="Create Invoice"
                         type="action" class="btn-primary"
                         attrs="{'invisible': [('invoice_status', '!=', 'to invoice')]}"
