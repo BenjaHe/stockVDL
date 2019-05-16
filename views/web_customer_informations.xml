@@ -16,7 +16,7 @@
 
 
     <template id="partner" name="Partner">
-        <h3 class="page-header">Informations concernant vos budgets</h3>
+        <h3 class="page-header">Informations concernant votre enveloppe Economat</h3>
 
             <div class="o_form_field o_stat_info">
                   <span class="o_stat_text">Les données exposées le sont pour le service : </span>
