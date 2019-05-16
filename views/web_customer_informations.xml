@@ -25,7 +25,7 @@
 <hr></hr>
 
             <div class="o_form_field o_stat_info">
-                  <span class="o_stat_text"> - Montant de l'enveloppe Economat initial : </span>
+                  <span class="o_stat_text"> - Montant initial de l'enveloppe Economat : </span>
                   <strong><span t-esc="user_id.parent_id.budget_CE" />  <span class="o_stat_text">  € </span> </strong>
             </div>
 <hr></hr>
