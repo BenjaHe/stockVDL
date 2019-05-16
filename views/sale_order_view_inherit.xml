@@ -22,12 +22,12 @@
 
 
 
-                <xpath expr="//button[@name='%(action_view_sale_advance_payment_inv)d']" position="replace">
+              <!--  <xpath expr="//button[@name='%(action_view_sale_advance_payment_inv)d']" position="replace">
                      <button name="%(action_view_sale_advance_payment_inv)d" string="Create Invoice"
                         type="action" class="btn-primary"
                         attrs="{'invisible': [('invoice_status', '!=', 'to invoice')]}"
                         groups="group_bdc_view_all_achats"/>
-                </xpath>
+                </xpath>  -->
 
                 <xpath expr="//field[@name='payment_term_id']" position="after">
                     <field name="comptable_id" string="Comptable responsable"/>
