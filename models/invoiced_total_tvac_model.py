@@ -219,7 +219,7 @@ class ResPartner(models.Model):
     # Calcul du budget restant qui est la différence entre le budget donné et la somme des factures de
     # l'année en cours TVAC pour le budget "Crédit Economat".
 
-    budget_restant_CE = fields.Monetary(compute='_compute_budget_restant_CE', string="Budget restant CE", store=True)
+    budget_restant_CE = fields.Monetary(compute='_compute_budget_restant_CE', string="Budget restant CE")
 
     @api.one
     @api.depends('total_invoiced_tvac_CE', 'budget_CE')
