@@ -3,6 +3,7 @@
 
 from datetime import date, datetime, timedelta
 from openerp import models, fields, api, exceptions
+from openerp.addons.website_sale.models.product import product_public_category
 from openerp.exceptions import Warning
 
 
@@ -51,6 +52,7 @@ class Product(models.Model):
     # Ajout d'un prix TVAC (21 %) --> car les prix sont tous HTVA en ce compris sur le site web
 
     prix_tvac = fields.Monetary(compute='_prix_tvac', string ='Prix TVAC (21 % - pour info)', help='A titre informatif car le calcul des commandes se fait sur base du prix HTVA.')
+    # Affichage du prix public TVAC pour correspondre au prix catalogue IDEMA
     prix_public = fields.Monetary(compute='_prix_public', string="Prix public TVAC")
 
     # Affichage du prix public TVAC
@@ -64,6 +66,7 @@ class Product(models.Model):
         for product in self:
             product.prix_tvac = product.list_price * 1.21
 
+    # Retrait des 7% de remise et ajout 21% TVA
     def _prix_public(self):
         for product in self:
             product.prix_public = (product.list_price / 93) * 121
