@@ -53,7 +53,7 @@ class Product(models.Model):
 
     prix_tvac = fields.Monetary(compute='_prix_tvac', string ='Prix TVAC (21 % - pour info)', help='A titre informatif car le calcul des commandes se fait sur base du prix HTVA.')
     # Affichage du prix public TVAC pour correspondre au prix catalogue IDEMA
-    prix_public = fields.Monetary(compute='_prix_public', string="Prix public TVAC")
+    # prix_public = fields.Monetary(compute='_prix_public', string="Prix public TVAC")
 
     # Affichage du prix public TVAC
     prix_public_tvac = fields.Monetary(string="Prix public TVAC", help="Prix public TVAC du produit tel qu'exposer à un acheteur hors marché VDL.")
@@ -67,9 +67,9 @@ class Product(models.Model):
             product.prix_tvac = product.list_price * 1.21
 
     # Retrait des 7% de remise et ajout 21% TVA
-    def _prix_public(self):
-        for product in self:
-            product.prix_public = (product.list_price / 93) * 121
+    # def _prix_public(self):
+    #     for product in self:
+    #         product.prix_public = (product.list_price / 93) * 121
 
 
 class invoice(models.Model):
