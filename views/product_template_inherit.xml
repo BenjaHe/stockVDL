@@ -20,6 +20,9 @@
                     <field name="prix_reduc_tvac" string="Prix réduit TVAC"/>
                 </field>
 
+              <field name="prix_tvac" position="after">
+                  <field name="prix_public" string="Prix public TVAC"/>
+              </field>
           </field>
       </record>
   </data>
