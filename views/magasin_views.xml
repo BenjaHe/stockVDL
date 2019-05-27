@@ -16,7 +16,7 @@
               </field>
 
               <field name="location_dest_id" position="after">
-                  <field name="ok_livraison" string="Le client peut-être livré" class="oe_inline"/>
+                  <field name="ok_livraison" string="La commande peut être préparée" class="oe_inline"/>
               </field>
 
 
