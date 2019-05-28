@@ -49,6 +49,12 @@ class Product(models.Model):
 
     prix_tvac = fields.Monetary(compute='_prix_tvac', string ='Prix TVAC (21 % - pour info)', help='A titre informatif car le calcul des commandes se fait sur base du prix HTVA.')
 
+    # Affichage du prix public TVAC
+    prix_public_tvac = fields.Monetary(string="Prix public TVAC", help="Prix public TVAC du produit tel qu'exposer à un acheteur hors marché VDL.")
+
+    # Affichage du prix réduit TVAC
+    prix_reduc_tvac = fields.Monetary(string="Prix réduit TVAC", help="Prix VDL suite au marché (réduction appliquée) avec l'application de la TVA.")
+
     @api.depends('list_price')
     def _prix_tvac(self):
         for product in self:
