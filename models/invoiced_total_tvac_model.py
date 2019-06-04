@@ -241,7 +241,7 @@ class ResPartner(models.Model):
 
 
     @api.one
-    @api.depends('total_invoiced_tvac_CE', 'budget_CE')
+    @api.onchange('total_invoiced_tvac_CE', 'budget_CE')
     def _compute_budget_restant_CE(self):
         for partner in self:
             partner.budget_restant_CE = partner.budget_CE - partner.total_invoiced_tvac_CE
