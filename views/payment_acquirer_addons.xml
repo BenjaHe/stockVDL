@@ -10,11 +10,11 @@
 
               <!-- Informations ajoutées -->
 
-              <!--  Ajout d'un bouton pour remettre la facture en draft
+              <!--  Ajout d'un bouton pour remettre la facture en draft  -->
 
               <xpath expr="//header/button[@name='action_invoice_sent']" position="after">
                       <button string="Mettre en draft" type="object" name="bouton_draft"/>
-               </xpath>   -->
+               </xpath>
 
               <!--  Ajout d'un menu déroulant pour choisir le type de budget (objet payment_acquirer)  -->
 
