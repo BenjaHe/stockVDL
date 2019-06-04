@@ -20,8 +20,8 @@ class AccountInvoice(models.Model):
 
 
 #  AJOUT d'un bouton pour remettre en draft les factures clients pour pouvoir les remodififer
-    @api.one
-    def bouton_draft(self):
-        self.write({
-             'state': 'draft'
-          })
+#     @api.one
+#     def bouton_draft(self):
+#         self.write({
+#              'state': 'draft'
+#           })
