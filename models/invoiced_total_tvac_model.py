@@ -38,7 +38,7 @@ class ResPartner(models.Model):
     budget_cartouche = fields.Monetary(string='Budget cartouche',
                                        required=False)
 
-    budget_restant_CE = fields.Monetary(compute='_compute_budget_restant_CE', string="Budget restant CE", store=True)
+    budget_restant_CE = fields.Monetary(compute='_compute_budget_restant_CE', string="Budget restant CE")
 
     budget_restant_CP = fields.Monetary(compute='_compute_budget_restant_CP', string="Budget restant")
 
