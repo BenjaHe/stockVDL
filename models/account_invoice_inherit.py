@@ -25,3 +25,9 @@ class AccountInvoice(models.Model):
         self.write({
              'state': 'draft'
           })
+
+    @api.one
+    def bouton_revalider(self):
+        self.write({
+            'state': 'open'
+        })

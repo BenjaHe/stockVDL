@@ -16,6 +16,10 @@
                       <button string="Mettre en draft" type="object" name="bouton_draft"/>
                </xpath>
 
+              <xpath expr="//header/button[@name='bouton_draft']" position="after">
+                      <button string="Re Valider" type="object" name="bouton_revalider"/>
+               </xpath>
+
               <!--  Ajout d'un menu déroulant pour choisir le type de budget (objet payment_acquirer)  -->
 
               <field name="residual" position="after">
