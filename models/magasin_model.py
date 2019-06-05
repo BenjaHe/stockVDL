@@ -8,6 +8,6 @@ class CommentaireMagasinier (models.Model):
 
     # Champs boolean pour indiquer aux magasiners si le staff administratif a vérifié que le client a encore du budget
 
-    ok_livraison = fields.Boolean('Le client peut être livré', default=False, track_visibility='onchange')
+    ok_livraison = fields.Boolean(string='La commande peut être préparée', default=False, track_visibility='onchange')
 
 
