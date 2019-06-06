@@ -45,6 +45,9 @@ class ResPartner(models.Model):
     budget_restant_CP_web = fields.Monetary(compute='_compute_budget_restant_CP_web',
                                             string='Budget restant CP pour le web',
                                             required=False)
+    budget_restant_CE_web = fields.Monetary(compute='_compute_budget_restant_CE_web',
+                                            string='Budget restant CE pour le web',
+                                            required=False)
 
     total_invoiced_tvac_CP_web = fields.Monetary(compute='_compute_total_invoiced_tvac_cp_web',
                                                 string='Total facturé CP pour le web',
@@ -178,6 +181,12 @@ class ResPartner(models.Model):
     def _compute_budget_restant_CP_web(self):
         for partner in self:
             partner.budget_restant_CP_web = partner.budget_restant_CP
+
+    @api.multi
+    @api.depends('budget_restant_CE')
+    def _compute_budget_restant_CE_web(self):
+        for partner in self:
+            partner.budget_restant_CE_web = partner.budget_restant_CE
 
     #############################################################################################################
     ##          Pour afficher la somme des achats sur le site web -> pour pourvoir faire un stor=true
