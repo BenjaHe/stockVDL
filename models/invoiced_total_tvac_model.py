@@ -182,22 +182,26 @@ class ResPartner(models.Model):
         for partner in self:
             partner.budget_restant_CP_web = partner.budget_restant_CP
 
-    @api.multi
-    @api.depends('budget_restant_CE')
-    def _compute_budget_restant_CE_web(self):
-        for partner in self:
-            partner.budget_restant_CE_web = partner.budget_restant_CE
+
 
     #############################################################################################################
-    ##          Pour afficher la somme des achats sur le site web -> pour pourvoir faire un stor=true
+    ##          Pour afficher la somme des achats sur le site web
     ###########################################################################################################""
 
     @api.one
-    @api.depends('budget_CE', 'budget_restant_CE')
+    @api.depends('total_invoiced_tvac_CE')
     def _compute_total_invoiced_tvac_ce_web(self):
         for partner in self:
-            partner.total_invoiced_tvac_CE_web = partner.budget_CE - partner.budget_restant_CE
+            partner.total_invoiced_tvac_CE_web = partner.total_invoiced_tvac_CE
 
+  #############################################################################################################
+  ##          Pour afficher le reste du budget sur le web
+  ###########################################################################################################""
+    @api.multi
+    @api.depends('total_invoiced_tvac_CE', 'budget_CE')
+    def _compute_budget_restant_CE_web(self):
+        for partner in self:
+            partner.budget_restant_CE_web = partner.budget_CE - partner.total_invoiced_tvac_CE
 
             # ______________________________________________________________________________________________#
             # TOTAL_INVOICED_TVAC_CE : Calcul du total des factures TVAC sur le budget "CREDIT ECONOMAT"   #
