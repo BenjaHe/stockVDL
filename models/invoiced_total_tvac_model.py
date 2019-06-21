@@ -188,7 +188,7 @@ class ResPartner(models.Model):
         ###########################################################################################################""
 
         @api.depends('budget_CE')
-        def _compute_budget_CE(self):
+        def _compute_budget_CE_web(self):
             for partner in self:
                 partner.budget_CE_web = partner.budget_CE
 
