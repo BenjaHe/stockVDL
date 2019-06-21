@@ -37,7 +37,7 @@
 <hr></hr>
             <div class="o_form_field o_stat_info">
                   <span class="o_stat_text"> - Budget restant sur l'enveloppe Economat : </span>
-                  <strong><span t-esc="user_id.parent_id.budget_restant_CP_web" />  <span class="o_stat_text">  € </span> </strong>
+                  <strong><span t-esc="user_id.parent_id.budget_restant_CE_web" />  <span class="o_stat_text">  € </span> </strong>
             </div>
 
     </template>
