@@ -26,7 +26,7 @@ class ResPartner(models.Model):
 
     budget_CE = fields.Monetary('Budget économat', required=False)
 
-    budget_CE_web = fields.Monetary(compute='_compute_budget_CE_web', string='Budget économat', required=False)
+    budget_CE_web = fields.Monetary(compute='_compute_budget_CE_web', string='Budget économat pour web', required=False)
 
     budget_CP = fields.Monetary('Budget CP', required=False)
 
