@@ -26,6 +26,8 @@ class ResPartner(models.Model):
 
     budget_CE = fields.Monetary('Budget économat', required=False)
 
+    budget_CE_web = fields.Monetary(compute='_compute_budget_CE_web', string='Budget économat', required=False)
+
     budget_CP = fields.Monetary('Budget CP', required=False)
 
     total_invoiced_tvac = fields.Monetary(compute='_invoice_total_tvac', string="Total Invoiced",
@@ -181,7 +183,14 @@ class ResPartner(models.Model):
         for partner in self:
             partner.budget_restant_CP_web = partner.budget_restant_CP
 
+        #############################################################################################################
+        ##          Pour afficher la somme des achats sur le site web
+        ###########################################################################################################""
 
+        @api.depends('budget_CE')
+        def _compute_budget_CE(self):
+            for partner in self:
+                partner.budget_CE_web = partner.budget_CE
 
     #############################################################################################################
     ##          Pour afficher la somme des achats sur le site web
