@@ -176,13 +176,13 @@ class ResPartner(models.Model):
             for partner in self:
                 partner.budget_restant_CP = partner.budget_CP - partner.total_invoiced_tvac_CP
 
-    @api.multi
+
     @api.depends('budget_restant_CP')
     def _compute_budget_restant_CP_web(self):
         for partner in self:
             partner.budget_restant_CP_web = partner.budget_restant_CP
 
-    @api.multi
+
     @api.depends('budget_restant_CE')
     def _compute_budget_restant_CE_web(self):
         for partner in self:
