@@ -31,13 +31,13 @@
 <hr></hr>
             <div class="o_form_field o_stat_info">
                   <span class="o_stat_text"> - Somme total de vos achats sur l'enveloppe Economat : </span>
-                  <strong>  <span class="o_stat_text">(calcul indisponible actuellement)  € </span> </strong>
+                  <strong>  <span class="o_stat_text">(calcul indisponible actuellement)  </span> </strong>
             </div>
 
 <hr></hr>
             <div class="o_form_field o_stat_info">
                   <span class="o_stat_text"> - Budget restant sur l'enveloppe Economat : </span>
-                  <strong><span t-esc="user_id.parent_id.budget_restant_CE_web" />  <span class="o_stat_text">  € </span> </strong>
+                  <strong>  <span class="o_stat_text">(calcul indisponible actuellement)  </span> </strong>
             </div>
 
     </template>
