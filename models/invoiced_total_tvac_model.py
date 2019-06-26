@@ -197,7 +197,7 @@ class ResPartner(models.Model):
     #############################################################################################################
     ##          Pour afficher la somme des achats sur le site web @@@@@@@@@@@@@@@@@@@@@@
     ###########################################################################################################""
-        @api.depends('total_invoiced_tvac_CE')
+        @api.onchange('total_invoiced_tvac_CE')
         def _compute_total_invoiced_tvac_CE_web(self):
             for partner in self:
                 partner.total_invoiced_tvac_CE_web = partner.total_invoiced_tvac_CE
