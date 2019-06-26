@@ -205,7 +205,7 @@ class ResPartner(models.Model):
         @api.onchange('total_invoiced_tvac_CE')
         def _compute_total_invoiced_tvac_CE_web_test(self):
             for partner in self:
-                partner.total_invoiced_tvac_CE_web = partner.total_invoiced_tvac_CE
+                partner.total_invoiced_tvac_CE_web_test = partner.total_invoiced_tvac_CE
 
 
   #############################################################################################################
