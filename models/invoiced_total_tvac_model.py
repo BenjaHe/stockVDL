@@ -206,10 +206,10 @@ class ResPartner(models.Model):
   ##          Pour afficher le reste du budget sur le web
   ###########################################################################################################""
 
-        @api.onchange('total_invoiced_tvac_CE_web', 'budget_CE_web')
+        @api.onchange('budget_CE','total_invoiced_tvac_CE_web')
         def _compute_budget_restant_CE_web(self):
             for partner in self:
-                partner.budget_restant_CE_web = partner.budget_CE_web - partner.total_invoiced_tvac_CE_web
+                partner.budget_restant_CE_web = partner.budget_CE - partner.total_invoiced_tvac_CE_web
 
             # ______________________________________________________________________________________________#
             # TOTAL_INVOICED_TVAC_CE : Calcul du total des factures TVAC sur le budget "CREDIT ECONOMAT"   #
