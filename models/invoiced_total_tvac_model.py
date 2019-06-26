@@ -56,7 +56,7 @@ class ResPartner(models.Model):
                                                 string='Total facturé CP pour le web',
                                                 required=False)
 
-    total_invoiced_tvac_CE_web = fields.Monetary(compute='_compute_total_invoiced_tvac_ce_web',
+    total_invoiced_tvac_CE_web = fields.Monetary(compute='_compute_total_invoiced_tvac_CE_web',
                                                  string='Total facturé CE pour le web',
                                                  required=False,
                                                  store=True)
@@ -166,7 +166,7 @@ class ResPartner(models.Model):
 
 
 ####################################################
-##          TEST ICI DU NOUVEAU ALGO
+##          Calculs sur CP
 
     @api.multi
     @api.depends('total_invoiced_tvac_CP')
@@ -186,7 +186,7 @@ class ResPartner(models.Model):
             partner.budget_restant_CP_web = partner.budget_restant_CP
 
         #############################################################################################################
-        ##          Pour afficher la somme des achats sur le site web
+        ##          Pour afficher le budget initial sur le web
         ###########################################################################################################""
 
         @api.depends('budget_CE')
@@ -195,59 +195,22 @@ class ResPartner(models.Model):
                 partner.budget_CE_web = partner.budget_CE
 
     #############################################################################################################
-    ##          Pour afficher la somme des achats sur le site web
+    ##          Pour afficher la somme des achats sur le site web @@@@@@@@@@@@@@@@@@@@@@
     ###########################################################################################################""
+        @api.depends('total_invoiced_tvac_CE')
+        def _compute_total_invoiced_tvac_CE_web(self):
+            for partner in self:
+                partner.total_invoiced_tvac_CE_web = partner.total_invoiced_tvac_CE
 
-    @api.onchange
-    @api.multi
-    def _compute_total_invoiced_tvac_ce_web(self):
-        account_invoice = self.env['account.invoice']
-        if not self.ids:
-            self.total_invoiced_tvac_CE = 0.0
-            return True
-
-        today = '%d0101' % datetime.today().year
-
-        user_currency_id = self.env.user.company_id.currency_id.id
-        all_partners_and_children = {}
-        all_partner_ids = []
-        for partner in self:
-            # price_total is in the company currency
-            all_partners_and_children[partner] = self.with_context(active_test=False).search(
-                [('id', 'child_of', partner.id)]).ids
-            all_partner_ids += all_partners_and_children[partner]
-
-        where_query = account_invoice._where_calc([
-            ('partner_id', 'in', all_partner_ids), ('state', 'not in', ['draft', 'cancel']),
-            ('type', 'in', ('out_invoice', 'out_refund')), ('date', '>=', today),
-            ('payment_acquirer_id_budget', '=', 'Credit Economat')
-        ])
-        # Credir Economat : on défini un nom à l'intermédiaire de paiement dans l'interface et on filtrer sur
-        # ce nom.
-
-        account_invoice._apply_ir_rules(where_query, 'read')
-        from_clause, where_clause, where_clause_params = where_query.get_sql()
-
-        query = """
-                                SELECT SUM(amount_total_signed) as total, partner_id
-                                FROM account_invoice account_invoice
-                                WHERE %s
-                                GROUP BY partner_id
-                            """ % where_clause
-        self.env.cr.execute(query, where_clause_params)
-        price_totals = self.env.cr.dictfetchall()
-        for partner, child_ids in all_partners_and_children.items():
-            partner.total_invoiced_tvac_CE = sum(price['total']
-                                                 for price in price_totals if price['partner_id'] in child_ids)
 
   #############################################################################################################
   ##          Pour afficher le reste du budget sur le web
   ###########################################################################################################""
 
-    @api.onchange('total_invoiced_tvac_CE_web', 'budget_CE_web')
-    def _compute_budget_restant_CE_web(self):
-        for partner in self:
-            partner.budget_restant_CE_web = partner.budget_CE_web - partner.total_invoiced_tvac_CE_web
+        @api.onchange('total_invoiced_tvac_CE_web', 'budget_CE_web')
+        def _compute_budget_restant_CE_web(self):
+            for partner in self:
+                partner.budget_restant_CE_web = partner.budget_CE_web - partner.total_invoiced_tvac_CE_web
 
             # ______________________________________________________________________________________________#
             # TOTAL_INVOICED_TVAC_CE : Calcul du total des factures TVAC sur le budget "CREDIT ECONOMAT"   #
