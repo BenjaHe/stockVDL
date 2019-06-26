@@ -24,38 +24,32 @@ class ResPartner(models.Model):
 
     budget_test = fields.Monetary('Budget en cours', required=False)
 
-    budget_CE = fields.Monetary('Budget économat', required=False)
-
-    budget_CE_web = fields.Monetary(compute='_compute_budget_CE_web', string='Budget économat pour web', required=False)
-
-    budget_CP = fields.Monetary('Budget CP', required=False)
-
     total_invoiced_tvac = fields.Monetary(compute='_invoice_total_tvac', string="Total Invoiced",
                                           groups='account.group_account_invoice')
-
-    total_invoiced_tvac_CP = fields.Monetary(compute='_invoice_total_tvac_CP', string="Total Invoiced CP")
-
-    total_invoiced_tvac_CE = fields.Monetary(compute='_invoice_total_tvac_CE', string="Total Invoiced CE")
 
     budget_cartouche = fields.Monetary(string='Budget cartouche',
                                        required=False)
 
-    budget_restant_CE = fields.Monetary(compute='_compute_budget_restant_CE', string="Budget restant CE")
-
+    budget_CP = fields.Monetary('Budget CP', required=False)
+    total_invoiced_tvac_CP = fields.Monetary(compute='_invoice_total_tvac_CP', string="Total Invoiced CP")
     budget_restant_CP = fields.Monetary(compute='_compute_budget_restant_CP', string="Budget restant")
-
+    total_invoiced_tvac_CP_web = fields.Monetary(compute='_compute_total_invoiced_tvac_cp_web',
+                                                 string='Total facturé CP pour le web',
+                                                 required=False)
     budget_restant_CP_web = fields.Monetary(compute='_compute_budget_restant_CP_web',
                                             string='Budget restant CP pour le web',
                                             required=False)
+
+    # CE
+    budget_CE = fields.Monetary('Budget économat', required=False)
+    total_invoiced_tvac_CE = fields.Monetary(compute='_invoice_total_tvac_CE', string="Total Invoiced CE")
+    budget_restant_CE = fields.Monetary(compute='_compute_budget_restant_CE', string="Budget restant CE")
+
+    budget_CE_web = fields.Monetary(compute='_compute_budget_CE_web', string='Budget économat pour web', required=False)
     budget_restant_CE_web = fields.Monetary(compute='_compute_budget_restant_CE_web',
                                             string='Budget restant CE pour le web',
                                             required=False,
                                             store=True)
-
-    total_invoiced_tvac_CP_web = fields.Monetary(compute='_compute_total_invoiced_tvac_cp_web',
-                                                string='Total facturé CP pour le web',
-                                                required=False)
-
     total_invoiced_tvac_CE_web = fields.Monetary(compute='_compute_total_invoiced_tvac_CE_web',
                                                  string='Total facturé CE pour le web',
                                                  required=False,
