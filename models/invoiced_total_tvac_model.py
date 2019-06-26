@@ -57,7 +57,7 @@ class ResPartner(models.Model):
                                                  string='Total facturé CE pour le web',
                                                  required=False,
                                                  store=True)
-    total_invoiced_tvac_CE_web_test = fields.Monetary(compute='_compute_total_invoiced_tvac_CE_web',
+    total_invoiced_tvac_CE_web_test = fields.Monetary(compute='_compute_total_invoiced_tvac_CE_web_test',
                                                  string='Total facturé CE pour le web',
                                                  required=False)
 
@@ -199,6 +199,11 @@ class ResPartner(models.Model):
     ###########################################################################################################""
         @api.onchange('total_invoiced_tvac_CE')
         def _compute_total_invoiced_tvac_CE_web(self):
+            for partner in self:
+                partner.total_invoiced_tvac_CE_web = partner.total_invoiced_tvac_CE
+
+        @api.onchange('total_invoiced_tvac_CE')
+        def _compute_total_invoiced_tvac_CE_web_test(self):
             for partner in self:
                 partner.total_invoiced_tvac_CE_web = partner.total_invoiced_tvac_CE
 
