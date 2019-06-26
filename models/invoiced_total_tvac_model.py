@@ -197,7 +197,7 @@ class ResPartner(models.Model):
     ##          Pour afficher la somme des achats sur le site web
     ###########################################################################################################""
 
-
+    @api.onchange
     @api.multi
     def _compute_total_invoiced_tvac_ce_web(self):
         account_invoice = self.env['account.invoice']
