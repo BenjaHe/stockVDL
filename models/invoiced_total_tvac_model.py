@@ -240,6 +240,21 @@ class ResPartner(models.Model):
                 partner.total_invoiced_tvac_CE = sum(price['total']
                                                      for price in price_totals if price['partner_id'] in child_ids)
 
+            account_invoice._apply_ir_rules(where_query, 'read')
+            from_clause, where_clause, where_clause_params = where_query.get_sql()
+
+            query = """
+                                    SELECT SUM(amount_total_signed) as total, partner_id
+                                    FROM account_invoice account_invoice
+                                    WHERE %s
+                                    GROUP BY partner_id
+                                """ % where_clause
+            self.env.cr.execute(query, where_clause_params)
+            price_totals = self.env.cr.dictfetchall()
+            for partner, child_ids in all_partners_and_children.items():
+                partner.total_invoiced_tvac_CE = sum(price['total']
+                                                     for price in price_totals if price['partner_id'] in child_ids)
+
   #############################################################################################################
   ##          Pour afficher le reste du budget sur le web
   ###########################################################################################################""
