@@ -49,7 +49,8 @@ class ResPartner(models.Model):
                                             required=False)
     budget_restant_CE_web = fields.Monetary(compute='_compute_budget_restant_CE_web',
                                             string='Budget restant CE pour le web',
-                                            required=False)
+                                            required=False,
+                                            store=True)
 
     total_invoiced_tvac_CP_web = fields.Monetary(compute='_compute_total_invoiced_tvac_cp_web',
                                                 string='Total facturé CP pour le web',
@@ -178,8 +179,8 @@ class ResPartner(models.Model):
             for partner in self:
                 partner.budget_restant_CP = partner.budget_CP - partner.total_invoiced_tvac_CP
 
-    @api.multi
-    @api.depends('budget_restant_CP')
+
+    @api.onchange('budget_restant_CP')
     def _compute_budget_restant_CP_web(self):
         for partner in self:
             partner.budget_restant_CP_web = partner.budget_restant_CP
@@ -243,10 +244,10 @@ class ResPartner(models.Model):
   ##          Pour afficher le reste du budget sur le web
   ###########################################################################################################""
 
-    @api.depends('total_invoiced_tvac_CE', 'budget_CE')
+    @api.onchange('total_invoiced_tvac_CE_web', 'budget_CE_web')
     def _compute_budget_restant_CE_web(self):
         for partner in self:
-            partner.budget_restant_CE_web = partner.budget_CE - partner.total_invoiced_tvac_CE
+            partner.budget_restant_CE_web = partner.budget_CE_web - partner.total_invoiced_tvac_CE_web
 
             # ______________________________________________________________________________________________#
             # TOTAL_INVOICED_TVAC_CE : Calcul du total des factures TVAC sur le budget "CREDIT ECONOMAT"   #
