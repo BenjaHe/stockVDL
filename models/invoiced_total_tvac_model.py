@@ -49,7 +49,8 @@ class ResPartner(models.Model):
                                             required=False)
     budget_restant_CE_web = fields.Monetary(compute='_compute_budget_restant_CE_web',
                                             string='Budget restant CE pour le web',
-                                            required=False)
+                                            required=False,
+                                            store=True)
 
     total_invoiced_tvac_CP_web = fields.Monetary(compute='_compute_total_invoiced_tvac_cp_web',
                                                 string='Total facturé CP pour le web',
