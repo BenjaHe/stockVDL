@@ -57,8 +57,7 @@ class ResPartner(models.Model):
 
     total_invoiced_tvac_CE_web = fields.Monetary(compute='_compute_total_invoiced_tvac_ce_web',
                                                  string='Total facturé CE pour le web',
-                                                 required=False,
-                                                 store=True)
+                                                 required=False)
 
     # TOTAL_INVOICED_TVAC : Calcul du total des factures TVAC (tous budgets confondus et année en cours)
 
