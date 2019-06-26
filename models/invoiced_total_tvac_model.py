@@ -57,7 +57,8 @@ class ResPartner(models.Model):
 
     total_invoiced_tvac_CE_web = fields.Monetary(compute='_compute_total_invoiced_tvac_ce_web',
                                                  string='Total facturé CE pour le web',
-                                                 required=False)
+                                                 required=False,
+                                                 store=True)
 
     # TOTAL_INVOICED_TVAC : Calcul du total des factures TVAC (tous budgets confondus et année en cours)
 
@@ -197,7 +198,7 @@ class ResPartner(models.Model):
     ###########################################################################################################""
 
 
-    @api.depends('total_invoiced_tvac_CE')
+    @api.onchange('total_invoiced_tvac_CE')
     def _compute_total_invoiced_tvac_ce_web(self):
         for partner in self:
             partner.total_invoiced_tvac_CE_web = partner.total_invoiced_tvac_CE
