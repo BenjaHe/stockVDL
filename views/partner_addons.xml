@@ -9,7 +9,8 @@
           <field name="arch" type="xml">
 
             <field name="website" position="after">
-                <field name="comptable" string="Comptable"/>
+                <field name="comptable" string="Comptable attitré"/>
+                <field name="comptables" string="Comptables autorisés" widget="many2many_tags"/>
                 <field name="num_comptable" string="Numéro du comptable (si comptable)"/>
                 <field name="num_mon_comptable" string="Numéro du comptable associé" readonly="1"/>
                 <field name="directeur" string="Directeur"/>

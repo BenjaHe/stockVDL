@@ -11,6 +11,8 @@ class ResPartner(models.Model):
     _inherit = ['res.partner']
 
     comptable = fields.Many2one('res.users', string='Comptable attitré', required=False, track_visibility='onchange')
+    comptables = fields.Many2many('res.users', string='Comptable temporaire', required=False, track_visibility='onchange')
+
     directeur = fields.Many2one('res.users', string='Directeur validateur', required=False, track_visibility='onchange')
     num_comptable = fields.Char(string='Numéro du comptable', required=False, track_visibility='onchange', help='A renseigner uniquement pour les comptables.')
     num_mon_comptable = fields.Char(string='Numéro de mon comptable', required=False, related='comptable.num_comptable', help='Le numéro du comptable qui m est renseigné.')
@@ -19,8 +21,10 @@ class ResPartner(models.Model):
 class Sale(models.Model):
     _inherit = ['sale.order']
 
-    comptable_id = fields.Many2one("res.users", related='partner_id.comptable', string="Comptable", readonly=True,
+    comptable_id = fields.Many2one("res.users", related='partner_id.comptable', string="Comptable principal", readonly=True,
                                    required=False)
+    comptable_ids = fields.Many2many("res.users", related='partner_id.comptables', string="CComptables autorisés", readonly=True,
+                                     required=False)
     directeur_id = fields.Many2one("res.users", related='partner_id.directeur', string="Directeur", readonly=True,
                                    required=False)
 
@@ -35,9 +39,11 @@ class PurchaseOrder(models.Model):
     directeur_id = fields.Many2one("res.users", related='dest_address_id.directeur', string="Directeur",
                                    readonly=True,
                                    required=False)
-    comptable_id = fields.Many2one("res.users", related='dest_address_id.comptable', string="Directeur",
+    comptable_id = fields.Many2one("res.users", related='dest_address_id.comptable', string="Comptable principal",
                                    readonly=True,
                                    required=False)
+    comptable_ids = fields.Many2many("res.users", related='dest_address_id.comptables', string="Comptables autorisés", readonly=True,
+                                     required=False)
     tel_comptable_id = fields.Char("res.users", related='dest_address_id.comptable.mobile',
                                    readonly=True,
                                    required=False)
@@ -50,10 +56,13 @@ class Product(models.Model):
     _inherit = ['product.template']
 
     # Ajout d'un prix TVAC (21 %) --> car les prix sont tous HTVA en ce compris sur le site web
-
     prix_tvac = fields.Monetary(compute='_prix_tvac', string ='Prix TVAC (21 % - pour info)', help='A titre informatif car le calcul des commandes se fait sur base du prix HTVA.')
-    # Affichage du prix public TVAC pour correspondre au prix catalogue IDEMA
-    # prix_public = fields.Monetary(compute='_prix_public', string="Prix public TVAC")
+
+    # Affichage du prix public TVAC
+    prix_public_tvac = fields.Monetary(string="Prix public TVAC")
+
+    # Affichage du prix réduit TVAC
+    prix_reduc_tvac = fields.Monetary(string="Prix réduit TVAC")
 
     # Affichage du prix public TVAC
     prix_public_tvac = fields.Monetary(string="Prix public TVAC", help="Prix public TVAC du produit tel qu'exposer à un acheteur hors marché VDL.")
@@ -66,10 +75,11 @@ class Product(models.Model):
         for product in self:
             product.prix_tvac = product.list_price * 1.21
 
-    # Retrait des 7% de remise et ajout 21% TVA
-    # def _prix_public(self):
-    #     for product in self:
-    #         product.prix_public = (product.list_price / 93) * 121
+    # Retrait des 7% de remise IDEMA et ajout 21% TVA
+    # def _prix_public_idema(self):
+    #     if self.seller_ids.name == 'IDEMA-SPORT':
+    #         for product in self:
+    #             product.prix_public = (product.list_price / 93) * 121
 
 
 class invoice(models.Model):

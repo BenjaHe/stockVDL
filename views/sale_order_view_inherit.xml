@@ -29,7 +29,8 @@
 
 
                 <xpath expr="//field[@name='payment_term_id']" position="after">
-                    <field name="comptable_id" string="Comptable responsable"/>
+                    <field name="comptable_id" string="Comptable principal"/>
+                    <field name="comptable_ids" string="Comptables autorisés" widget="many2many_tags"/>
                     <field name="directeur_id" string="Direction" />
                 </xpath>
 
