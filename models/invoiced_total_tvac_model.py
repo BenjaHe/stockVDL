@@ -201,7 +201,7 @@ class ResPartner(models.Model):
     @api.onchange('total_invoiced_tvac_CE')
     def _compute_total_invoiced_tvac_ce_web(self):
         for partner in self:
-            partner.total_invoiced_tvac_CE_web = partner.total_invoiced_tvac_CE - 0
+            partner.total_invoiced_tvac_CE_web = partner.total_invoiced_tvac_CE
 
   #############################################################################################################
   ##          Pour afficher le reste du budget sur le web
