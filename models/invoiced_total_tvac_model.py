@@ -250,10 +250,10 @@ class ResPartner(models.Model):
   ##          Pour afficher le reste du budget sur le web
   ###########################################################################################################""
 
-    @api.onchange('budget_CE','total_invoiced_tvac_CE_web_test')
+    @api.onchange('budget_CE','total_invoiced_tvac_CE_web_test','budget_restant_CE')
     def _compute_budget_restant_CE_web(self):
             for partner in self:
-                partner.budget_restant_CE_web = partner.budget_CE - partner.total_invoiced_tvac_CE
+                partner.budget_restant_CE_web = partner.budget_restant_CE
                 _logger.warning(u"BUDGET RESTANT CE WEB {BUDGET_RESTANT_CE_web}".format(BUDGET_RESTANT_CE_web=partner.budget_restant_CE_web))
 
             # ______________________________________________________________________________________________#
