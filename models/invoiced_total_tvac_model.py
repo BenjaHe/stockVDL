@@ -252,7 +252,7 @@ class ResPartner(models.Model):
     def _compute_budget_restant_CE_web(self):
             for partner in self:
                 partner.budget_restant_CE_web = partner.budget_CE - partner.total_invoiced_tvac_CE_web_test
-                _logger.warning(u"BUDGET RESTANT CE WEB {BUDGET_CE_web}".format(BUDGET_CE_web=budget_restant_CE_web))
+                _logger.warning(u"BUDGET RESTANT CE WEB {BUDGET_CE_web}".format(BUDGET_CE_web=partner.budget_restant_CE_web))
 
             # ______________________________________________________________________________________________#
             # TOTAL_INVOICED_TVAC_CE : Calcul du total des factures TVAC sur le budget "CREDIT ECONOMAT"   #
