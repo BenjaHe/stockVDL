@@ -253,7 +253,7 @@ class ResPartner(models.Model):
     @api.onchange('budget_CE','total_invoiced_tvac_CE_web_test')
     def _compute_budget_restant_CE_web(self):
             for partner in self:
-                partner.budget_restant_CE_web = partner.budget_CE - 2
+                partner.budget_restant_CE_web = partner.budget_CE - partner.total_invoiced_tvac_CE
                 _logger.warning(u"BUDGET RESTANT CE WEB {BUDGET_RESTANT_CE_web}".format(BUDGET_RESTANT_CE_web=partner.budget_restant_CE_web))
 
             # ______________________________________________________________________________________________#
