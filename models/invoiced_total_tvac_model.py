@@ -51,10 +51,10 @@ class ResPartner(models.Model):
                                     string='Budget économat pour web')
     budget_restant_CE_web = fields.Monetary(compute='_compute_budget_restant_CE_web',
                                             string='Budget restant CE pour le web',
-                                            store=False)
+                                            store=True)
     total_invoiced_tvac_CE_web = fields.Monetary(compute='_compute_total_invoiced_tvac_CE_web',
                                                  string='Total facturé CE pour le web',
-                                                 store=False)
+                                                 store=True)
     total_invoiced_tvac_CE_web_test = fields.Monetary(compute='_compute_total_invoiced_tvac_CE_web_test',
                                                       string='Total facturé CE pour le web test',
                                                       store=False)
@@ -257,7 +257,7 @@ class ResPartner(models.Model):
                 _logger.warning(u"JE PASSE DANS MA FONCTION DE CALCUL")
                 partner.total_invoiced_tvac_CE = sum(price['total']
                                                      for price in price_totals if price['partner_id'] in child_ids)
-            _logger.warning(u"JE PASSE DANS MA FONCTION DE CALCUL{TOTAL}".format(TOTAL=price_totals))
+            _logger.warning(u"SOMME DES FACTURES {TOTAL_FACTURE}".format(TOTAL_FACTURE=price_totals))
 
   #############################################################################################################
   ##          Pour afficher le reste du budget sur le web
