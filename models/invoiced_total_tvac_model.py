@@ -242,7 +242,7 @@ class ResPartner(models.Model):
                 _logger.warning(u"JE PASSE DANS MA FONCTION DE CALCUL WEB")
                 partner.total_invoiced_tvac_CE = sum(price['total']
                                                      for price in price_totals if price['partner_id'] in child_ids)
-            _logger.warning(u"SOMME DES FACTURES WEB TEST {TOTAL_FACTURES_web}".format(TOTAL_FACTURES_web=where_clause_params))
+            _logger.warning(u"PARAMETRE DU QUERY DE LA PAGE WEB {TOTAL_FACTURES_web}".format(TOTAL_FACTURES_web=where_clause_params))
 
   #############################################################################################################
   ##          Pour afficher le reste du budget sur le web
