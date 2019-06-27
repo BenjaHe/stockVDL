@@ -15,7 +15,7 @@
                 <field name="num_mon_comptable" string="Numéro du comptable associé" readonly="1"/>
                 <field name="directeur" string="Directeur"/>
                 <field name="total_invoiced_tvac_CE_web_test" string="total_invoiced_tvac_CE_web_test"/>
-                <field name="budget_restant_CE_web" string="budget_restant_CE_web du parent"/>
+                <field name="budget_restant_CE_web" string="budget_restant_CE_web"/>
             </field>
 
           </field>
