@@ -54,7 +54,7 @@ class ResPartner(models.Model):
                                             store=False)
     total_invoiced_tvac_CE_web = fields.Char(compute='_compute_total_invoiced_tvac_CE_web',
                                                  string='Total facturé CE pour le web',
-                                                 store=True)
+                                                 store=False)
     total_invoiced_tvac_CE_web_test = fields.Monetary(compute='_compute_total_invoiced_tvac_CE_web_test',
                                                       string='Total facturé CE pour le web test',
                                                       store=False)
