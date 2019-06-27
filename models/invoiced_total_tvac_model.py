@@ -205,9 +205,9 @@ class ResPartner(models.Model):
     @api.multi
     def _compute_total_invoiced_tvac_CE_web_test(self):
             account_invoice = self.env['account.invoice']
-            # if not self.ids:
-            #     self.total_invoiced_tvac_CE_web_test = 0.0
-            #     return True
+            if not self.ids:
+                self.total_invoiced_tvac_CE_web_test = 0.0
+                return True
 
             today = '%d0101' % datetime.today().year
 
@@ -217,7 +217,7 @@ class ResPartner(models.Model):
             for partner in self:
                 # price_total is in the company currency
                 all_partners_and_children[partner] = self.with_context(active_test=False).search(
-                    [('id', 'child_of', partner.id)]).ids
+                    [('id', 'child_of', self.env.uid)]).ids
                 all_partner_ids += all_partners_and_children[partner]
 
             where_query = account_invoice._where_calc([
@@ -243,6 +243,7 @@ class ResPartner(models.Model):
                 _logger.warning(u"JE PASSE DANS MA FONCTION DE CALCUL WEB")
                 partner.total_invoiced_tvac_CE_web_test = sum(price['total']
                                                      for price in price_totals if price['partner_id'] in child_ids)
+
             _logger.warning(u"PARAMETRE DU QUERY DE LA PAGE WEB {TOTAL_FACTURES_web}".format(TOTAL_FACTURES_web=where_clause_params))
             _logger.warning(u"Liste des partenaires pour calcul factures web {partners}".format(
                 partners=all_partner_ids))
