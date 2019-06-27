@@ -247,6 +247,8 @@ class ResPartner(models.Model):
             _logger.warning(u"PARAMETRE DU QUERY DE LA PAGE WEB {TOTAL_FACTURES_web}".format(TOTAL_FACTURES_web=where_clause_params))
             _logger.warning(u"Liste des partenaires pour calcul factures web {partners}".format(
                 partners=all_partner_ids))
+            _logger.warning(u"VALEUR du PRICE TOTAL {price}".format(
+                price=price_totals))
   #############################################################################################################
   ##          Pour afficher le reste du budget sur le web
   ###########################################################################################################""
