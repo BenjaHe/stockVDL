@@ -187,7 +187,7 @@ class ResPartner(models.Model):
         ##          Pour afficher le budget initial sur le web
         ###########################################################################################################""
 
-    @api.one
+    @api.multi
     @api.depends('budget_CE')
     def _compute_budget_CE_web(self):
             for partner in self:
@@ -196,7 +196,7 @@ class ResPartner(models.Model):
     #############################################################################################################
     ##          Pour afficher la somme des achats sur le site web @@@@@@@@@@@@@@@@@@@@@@
     ###########################################################################################################""
-    @api.one
+    @api.multi
     @api.depends('total_invoiced_tvac_CE')
     def _compute_total_invoiced_tvac_CE_web(self):
             for partner in self:
@@ -253,7 +253,7 @@ class ResPartner(models.Model):
   #############################################################################################################
   ##          Pour afficher le reste du budget sur le web
   ###########################################################################################################""
-    @api.one
+    @api.multi
     @api.depends('budget_CE','total_invoiced_tvac_CE_web_test','budget_restant_CE')
     def _compute_budget_restant_CE_web(self):
             for partner in self:
