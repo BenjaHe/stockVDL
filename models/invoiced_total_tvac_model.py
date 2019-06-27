@@ -3,9 +3,11 @@
 from operator import itemgetter
 from datetime import datetime
 
-from openerp import api, fields, models, _
+from openerp import api, fields, models
 from openerp.tools import DEFAULT_SERVER_DATETIME_FORMAT
 from openerp.exceptions import ValidationError
+import logging
+_logger = logging.getLogger(__name__)
 
 
 class ResPartner(models.Model):
@@ -252,6 +254,7 @@ class ResPartner(models.Model):
             self.env.cr.execute(query, where_clause_params)
             price_totals = self.env.cr.dictfetchall()
             for partner, child_ids in all_partners_and_children.items():
+                _logger.warning(u"JE PASSE DANS MA FONCTION DE CALCUL")
                 partner.total_invoiced_tvac_CE = sum(price['total']
                                                      for price in price_totals if price['partner_id'] in child_ids)
 
