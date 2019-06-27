@@ -239,22 +239,7 @@ class ResPartner(models.Model):
             self.env.cr.execute(query, where_clause_params)
             price_totals = self.env.cr.dictfetchall()
             for partner, child_ids in all_partners_and_children.items():
-                partner.total_invoiced_tvac_CE_web_test = sum(price['total']
-                                                     for price in price_totals if price['partner_id'] in child_ids)
-
-            account_invoice._apply_ir_rules(where_query, 'read')
-            from_clause, where_clause, where_clause_params = where_query.get_sql()
-
-            query = """
-                                    SELECT SUM(amount_total_signed) as total, partner_id
-                                    FROM account_invoice account_invoice
-                                    WHERE %s
-                                    GROUP BY partner_id
-                                """ % where_clause
-            self.env.cr.execute(query, where_clause_params)
-            price_totals = self.env.cr.dictfetchall()
-            for partner, child_ids in all_partners_and_children.items():
-                _logger.warning(u"JE PASSE DANS MA FONCTION DE CALCUL")
+                _logger.warning(u"JE PASSE DANS MA FONCTION DE CALCUL WEB")
                 partner.total_invoiced_tvac_CE = sum(price['total']
                                                      for price in price_totals if price['partner_id'] in child_ids)
             _logger.warning(u"SOMME DES FACTURES WEB {TOTAL_FACTURES_web}".format(TOTAL_FACTURES_web=price_totals))
@@ -267,6 +252,7 @@ class ResPartner(models.Model):
     def _compute_budget_restant_CE_web(self):
             for partner in self:
                 partner.budget_restant_CE_web = partner.budget_CE - partner.total_invoiced_tvac_CE_web_test
+                _logger.warning(u"BUDGET RESTANT CE WEB {BUDGET_CE_web}".format(BUDGET_CE_web=budget_restant_CE_web))
 
             # ______________________________________________________________________________________________#
             # TOTAL_INVOICED_TVAC_CE : Calcul du total des factures TVAC sur le budget "CREDIT ECONOMAT"   #
