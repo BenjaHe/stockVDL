@@ -211,7 +211,7 @@ class ResPartner(models.Model):
 
             today = '%d0101' % datetime.today().year
 
-            partner = self.env.user.uid
+
             user_currency_id = self.env.user.company_id.currency_id.id
             all_partners_and_children = {}
             all_partner_ids = []
