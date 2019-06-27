@@ -217,7 +217,7 @@ class ResPartner(models.Model):
             for partner in self:
                 # price_total is in the company currency
                 all_partners_and_children[partner] = self.with_context(active_test=False).search(
-                    [('id', 'child_of', self.env.uid)]).ids
+                    [('id', 'child_of', partner.id)]).ids
                 all_partner_ids += all_partners_and_children[partner]
 
             where_query = account_invoice._where_calc([
