@@ -205,9 +205,9 @@ class ResPartner(models.Model):
     @api.multi
     def _compute_total_invoiced_tvac_CE_web_test(self):
             account_invoice = self.env['account.invoice']
-            if not self.ids:
-                self.total_invoiced_tvac_CE = 0.0
-                return True
+            # if not self.ids:
+            #     self.total_invoiced_tvac_CE = 0.0
+            #     return True
 
             today = '%d0101' % datetime.today().year
 
@@ -216,7 +216,7 @@ class ResPartner(models.Model):
             all_partner_ids = []
             for partner in self:
                 # price_total is in the company currency
-                all_partners_and_children[partner] = self.with_context(http.request.env.context.get('uid')).search(
+                all_partners_and_children[partner] = self.with_context(active_test=False).search(
                     [('id', 'child_of', partner.id)]).ids
                 all_partner_ids += all_partners_and_children[partner]
 
