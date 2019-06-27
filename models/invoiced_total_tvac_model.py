@@ -257,6 +257,7 @@ class ResPartner(models.Model):
                 _logger.warning(u"JE PASSE DANS MA FONCTION DE CALCUL")
                 partner.total_invoiced_tvac_CE = sum(price['total']
                                                      for price in price_totals if price['partner_id'] in child_ids)
+            _logger.warning(u"JE PASSE DANS MA FONCTION DE CALCUL{TOTAL}".format(TOTAL=price_totals))
 
   #############################################################################################################
   ##          Pour afficher le reste du budget sur le web
