@@ -211,13 +211,14 @@ class ResPartner(models.Model):
 
             today = '%d0101' % datetime.today().year
 
+            partner = self.env.user.uid
             user_currency_id = self.env.user.company_id.currency_id.id
             all_partners_and_children = {}
             all_partner_ids = []
             for partner in self:
                 # price_total is in the company currency
                 all_partners_and_children[partner] = self.with_context(active_test=False).search(
-                    [('id', 'child_of', partner.id)]).ids
+                    [('id', 'child_of', self.env.user.uid.id)]).ids
                 all_partner_ids += all_partners_and_children[partner]
 
             where_query = account_invoice._where_calc([
