@@ -29,8 +29,7 @@ class ResPartner(models.Model):
     total_invoiced_tvac = fields.Monetary(compute='_invoice_total_tvac', string="Total Invoiced",
                                           groups='account.group_account_invoice')
 
-    budget_cartouche = fields.Monetary(string='Budget cartouche',
-                                       required=False)
+
 
     # CPapier   ########################################################################################################
 
@@ -48,12 +47,15 @@ class ResPartner(models.Model):
 
     # CCartouche     ###################################################################################################
 
+    budget_cartouche = fields.Monetary(string='Budget cartouche',
+                                       required=False)             # Champs temporaire à faire disparaître
     budget_CC = fields.Monetary(string='Budget Cartouche', required=False)
     total_invoiced_tvac_CC = fields.Monetary(compute='_invoice_total_tvac_CC',
                                              string='Total facturé sur Crédit Cartouche',
                                              required=False)
     budget_restant_CC = fields.Monetary(compute='_compute_budget_restant_CC',
-                                        string="Budget restant pour les Cartouches")
+                                        string="Budget restant pour les Cartouches",
+                                        required=False)
 
     # CEconomat   ######################################################################################################
 
