@@ -6,4 +6,4 @@ sale_order_line_comptable,comptable.users,model_sale_order_line,base.group_user,
 stock_picking_comptable,comptable.users,model_stock_picking,base.group_user,1,1,1,0
 invoice_comptable,comptable.users,model_account_invoice,base.group_user,1,0,0,0
 purchase_comptable,comptable.users,model_purchase_order,base.group_user,1,1,1,0
-purchase_line_comptable,comptable.users,model_purchase_order.line,base.group_user,1,1,1,0
+purchase_line_comptable,comptable.users,model_purchase_order_line,base.group_user,1,1,1,0
