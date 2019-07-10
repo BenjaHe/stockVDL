@@ -59,7 +59,7 @@ class ResPartner(models.Model):
 
     # CEconomat   ######################################################################################################
 
-    budget_CE = fields.Monetary(string='Budget économat', required=False)
+    budget_CE = fields.Monetary(string='Budget Economat', required=False)
     total_invoiced_tvac_CE = fields.Monetary(compute='_invoice_total_tvac_CE', string="Total Invoiced CE")
     budget_restant_CE = fields.Monetary(compute='_compute_budget_restant_CE',
                                         string="Budget restant sur Crédit Economat")
