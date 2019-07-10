@@ -41,14 +41,8 @@
             </div>
 
 
-<hr></hr>
-            <div class="o_form_field o_stat_info">
-                  <span class="o_stat_text"> - Budget restant sur l'enveloppe Cartouche : </span>
-                  <strong> <span t-esc="user_id.parent_id.budget_restant_CC" /> <span class="o_stat_text"> € </span> </strong>
-            </div>
 
-<hr></hr>
-
+  <!--      <div>
             <div class="o_form_field o_stat_info">
                   <span class="o_stat_text"> - total_invoiced_tvac_CE : </span>
                   <strong> <span t-esc="user_id.parent_id.total_invoiced_tvac_CE" /> <span class="o_stat_text"> € </span> </strong>
@@ -64,18 +58,13 @@
                   <strong> <span t-esc="user_id.parent_id.total_invoiced_tvac_CE_web" /> <span class="o_stat_text"> € </span> </strong>
             </div>
 
-       <!--     <div class="o_form_field o_stat_info">
-                  <span class="o_stat_text"> - total_invoiced_tvac_CE_web_test : </span>
-                  <strong> <span t-esc="user_id.parent_id.total_invoiced_tvac_CE_web_test" /> <span class="o_stat_text"> € </span> </strong>
-            </div>  -->
-
             <div class="o_form_field o_stat_info">
                  <function model="res.partner" name="_compute_total_invoiced_tvac_CE_web_test" t-esc="user_id.parent_id.total_invoiced_tvac_CE_web_test"/>
                 <span class="o_stat_text"> Test appel de fonction </span>
                   <strong> <span t-esc="user_id.parent_id.total_invoiced_tvac_CE_web_test" /> <span class="o_stat_text"> € </span> </strong>
             </div>
 
-
+        </div>  -->
 
     </template>
 
