@@ -57,9 +57,13 @@
                   <strong> <span t-esc="user_id.parent_id.total_invoiced_tvac_CE_web" /> <span class="o_stat_text"> € </span> </strong>
             </div>
 
-            <div class="o_form_field o_stat_info">
+       <!--     <div class="o_form_field o_stat_info">
                   <span class="o_stat_text"> - total_invoiced_tvac_CE_web_test : </span>
                   <strong> <span t-esc="user_id.parent_id.total_invoiced_tvac_CE_web_test" /> <span class="o_stat_text"> € </span> </strong>
+            </div>  -->
+
+            <div class="o_form_field o_stat_info">
+                 <function model="res.partner" name="_compute_total_invoiced_tvac_CE_web_test"/>
             </div>
 
 
