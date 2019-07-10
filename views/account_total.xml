@@ -11,8 +11,7 @@
                 <field name="function" position="before">
                   <field name="budget_CE" string="Budget Economat (BE)"/>
                   <field name="budget_CP" string="Budget Papier (BP) "/>
-                  <field name="budget_cartouche" string="Budget Cartouche"/>
-                  <field name="budget_CC" string="Budget Cartouche CC (BC)"/>
+                  <field name="budget_CC" string="Budget Cartouche (BC)"/>
                   <field name="budget_test" string="Budget Total"/>
                 </field>
 
