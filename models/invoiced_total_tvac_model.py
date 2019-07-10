@@ -47,8 +47,8 @@ class ResPartner(models.Model):
 
     # CCartouche     ###################################################################################################
 
-    budget_cartouche = fields.Monetary(string='Budget cartouche',
-                                       required=False)             # Champs temporaire à faire disparaître
+   # budget_cartouche = fields.Monetary(string='Budget cartouche',
+    #                                   required=False)             # Champs temporaire à faire disparaître
     budget_CC = fields.Monetary(string='Budget Cartouche', required=False)
     total_invoiced_tvac_CC = fields.Monetary(compute='_invoice_total_tvac_CC',
                                              string='Total facturé sur Crédit Cartouche',
