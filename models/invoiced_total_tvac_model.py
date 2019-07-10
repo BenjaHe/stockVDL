@@ -385,8 +385,8 @@ class ResPartner(models.Model):
 
 
         #   Calcul du solde restant sur le budget Cartouche
-        @api.one
-        @api.onchange('total_invoiced_tvac_CC', 'budget_CC')
-        def _compute_budget_restant_CC(self):
-            for partner in self:
-                partner.budget_restant_CC = partner.budget_CC - partner.total_invoiced_tvac_CC
+    @api.one
+    @api.onchange('total_invoiced_tvac_CC', 'budget_CC')
+    def _compute_budget_restant_CC(self):
+        for partner in self:
+            partner.budget_restant_CC = partner.budget_CC - partner.total_invoiced_tvac_CC
