@@ -9,10 +9,10 @@
           <field name="arch" type="xml">
 
                 <field name="function" position="before">
-                  <field name="budget_CE" string="Budget Economat"/>
-                  <field name="budget_CP" string="Budget Papier"/>
+                  <field name="budget_CE" string="Budget Economat (BE)"/>
+                  <field name="budget_CP" string="Budget Papier (BP) "/>
                   <field name="budget_cartouche" string="Budget Cartouche"/>
-                  <field name="budget_CC" string="Budget Cartouche CC"/>
+                  <field name="budget_CC" string="Budget Cartouche CC (BC)"/>
                   <field name="budget_test" string="Budget Total"/>
                 </field>
 
@@ -71,16 +71,8 @@
                         </div>
                   </button>
 
-                  <!-- 4444444444444444444 Bouton Total des factures TVAC de l'année en cours, tout budget confondus -->
 
-                  <button type="action" class="oe_stat_button" id="total_invoiced_tvac" icon="fa-pencil-square-o" name="254" attrs="{'invisible': [('customer', '=', False)]}" context="{'search_default_partner_id': active_id,'default_partner_id': active_id}">
-                        <div class="o_form_field o_stat_info">
-                            <span class="o_stat_value"><field name="total_invoiced_tvac" widget="monetary" options="{'currency_field': 'currency_id'}"/></span>
-                            <span class="o_stat_text">Total TVAC</span>
-                        </div>
-                    </button>
-
-                  <!-- 55555555555555555555555555555555 Bouton solde sur CREDIT ECONOMAT (BE)  -->
+                  <!-- 44444444444444444444444444444 Bouton solde sur CREDIT ECONOMAT (BE)  -->
 
                   <button type="action" class="oe_stat_button" id="budget_restant_CE" icon="fa-euro" name="254" attrs="{'invisible': [('customer', '=', False)]}" context="{'search_default_partner_id': active_id,'default_partner_id': active_id}">
                         <div class="o_form_field o_stat_info">
@@ -89,7 +81,7 @@
                         </div>
                   </button>
 
-                  <!-- 6666666666666666666666666666666 Bouton Solde sur CREDIT PROPRE (BP) 66666-->
+                  <!-- 5555555555555555555555555 Bouton Solde sur CREDIT PROPRE (BP) -->
 
                   <button type="action" class="oe_stat_button" id="budget_restant_CP" icon="fa-euro" name="254" attrs="{'invisible': [('customer', '=', False)]}" context="{'search_default_partner_id': active_id,'default_partner_id': active_id}">
                         <div class="o_form_field o_stat_info">
@@ -99,7 +91,7 @@
                   </button>
 
 
-                  <!-- 77777777777777777777777777777 Bouton Solde sur CREDIT PROPRE (BP) 777777777777777-->
+                  <!-- 6666666666666666666666666666 Bouton Solde sur CREDIT PROPRE (BP) -->
 
                   <button type="action" class="oe_stat_button" id="budget_restant_CC" icon="fa-euro" name="254" attrs="{'invisible': [('customer', '=', False)]}" context="{'search_default_partner_id': active_id,'default_partner_id': active_id}">
                         <div class="o_form_field o_stat_info">
@@ -108,12 +100,17 @@
                         </div>
                   </button>
 
-                 <!-- <button type="action" class="oe_stat_button" id="budget_restant" icon="fa-euro" name="254" attrs="{'invisible': [('customer', '=', False)]}" context="{'search_default_partner_id': active_id,'default_partner_id': active_id}">
+
+                  <!-- 77777777777 Bouton Total des factures TVAC de l'année en cours, tout budget confondus -->
+
+                  <button type="action" class="oe_stat_button" id="total_invoiced_tvac" icon="fa-pencil-square-o" name="254" attrs="{'invisible': [('customer', '=', False)]}" context="{'search_default_partner_id': active_id,'default_partner_id': active_id}">
                         <div class="o_form_field o_stat_info">
-                            <span class="o_stat_value"><field name="budget_restant" widget="monetary" options="{'currency_field': 'currency_id'}"/></span>
-                            <span class="o_stat_text">Solde total</span>
+                            <span class="o_stat_value"><field name="total_invoiced_tvac" widget="monetary" options="{'currency_field': 'currency_id'}"/></span>
+                            <span class="o_stat_text">Total TVAC</span>
                         </div>
-                  </button> -->
+                    </button>
+
+
 
 
               </div>
