@@ -32,9 +32,13 @@ class ResPartner(models.Model):
     budget_cartouche = fields.Monetary(string='Budget cartouche',
                                        required=False)
 
-    budget_CP = fields.Monetary('Budget CP', required=False)
+    # CPapier   ########################################################################################################
+
+    budget_CP = fields.Monetary(string='Budget Papier', required=False)
     total_invoiced_tvac_CP = fields.Monetary(compute='_invoice_total_tvac_CP', string="Total Invoiced CP")
-    budget_restant_CP = fields.Monetary(compute='_compute_budget_restant_CP', string="Budget restant")
+    budget_restant_CP = fields.Monetary(compute='_compute_budget_restant_CP', string="Budget restant pour le Papier")
+
+        # Champs pour l'exposition sur le site Web -------------------------------------------------
     total_invoiced_tvac_CP_web = fields.Monetary(compute='_compute_total_invoiced_tvac_cp_web',
                                                  string='Total facturé CP pour le web',
                                                  required=False)
@@ -42,11 +46,23 @@ class ResPartner(models.Model):
                                             string='Budget restant CP pour le web',
                                             required=False)
 
-    # CE
+    # CCartouche     ###################################################################################################
+
+    budget_CC = fields.Monetary(string='Budget Cartouche', required=False)
+    total_invoiced_tvac_CC = fields.Monetary(compute='_invoice_total_tvac_CC',
+                                             string='Total facturé sur Crédit Cartouche',
+                                             required=False)
+    budget_restant_CC = fields.Monetary(compute='_compute_budget_restant_CC',
+                                        string="Budget restant pour les Cartouches")
+
+    # CEconomat   ######################################################################################################
+
     budget_CE = fields.Monetary('Budget économat', required=False)
     total_invoiced_tvac_CE = fields.Monetary(compute='_invoice_total_tvac_CE', string="Total Invoiced CE")
-    budget_restant_CE = fields.Monetary(compute='_compute_budget_restant_CE', string="Budget restant CE")
+    budget_restant_CE = fields.Monetary(compute='_compute_budget_restant_CE',
+                                        string="Budget restant sur Crédit Economat")
 
+        # Champs pour l'exposition sur le site Web -------------------------------------------------
     budget_CE_web = fields.Monetary(compute='_compute_budget_CE_web',
                                     string='Budget économat pour web')
     budget_restant_CE_web = fields.Monetary(compute='_compute_budget_restant_CE_web',
@@ -58,6 +74,8 @@ class ResPartner(models.Model):
     total_invoiced_tvac_CE_web_test = fields.Monetary(compute='_compute_total_invoiced_tvac_CE_web_test',
                                                       string='Total facturé CE pour le web test',
                                                       store=False)
+
+
 
     # TOTAL_INVOICED_TVAC : Calcul du total des factures TVAC (tous budgets confondus et année en cours)
 
@@ -141,7 +159,7 @@ class ResPartner(models.Model):
         where_query = account_invoice._where_calc([
             ('partner_id', 'in', all_partner_ids), ('state', 'not in', ['draft', 'cancel']),
             ('type', 'in', ('out_invoice', 'out_refund')), ('date', '>=', today),
-            ('payment_acquirer_id_budget', '=', 'Credit Propre')
+            ('payment_acquirer_id_budget', '=', 'Credit Papier')
         ])
         # Wire Transfer : on défini un nom à l'intermédiaire de paiement dans l'interface et on filtrer sur ce nom
         account_invoice._apply_ir_rules(where_query, 'read')
@@ -163,8 +181,8 @@ class ResPartner(models.Model):
     # cours TVAC pour le budget "Crédit Economat"
 
 
-####################################################
-##          Calculs sur CP
+#############################################################################################
+########################          Calculs sur Crédit Papier     #############################
 
     @api.multi
     @api.depends('total_invoiced_tvac_CP')
@@ -183,9 +201,9 @@ class ResPartner(models.Model):
         for partner in self:
             partner.budget_restant_CP_web = partner.budget_restant_CP
 
-        ###########################################################################################################
-        ##          Pour afficher le budget initial sur le web
-        ###########################################################################################################
+  ###########################################################################################################
+  ##          Pour afficher le budget initial sur le web
+  ###########################################################################################################
 
     @api.multi
     @api.depends('budget_CE')
@@ -316,3 +334,57 @@ class ResPartner(models.Model):
     def _compute_budget_restant_CE(self):
         for partner in self:
             partner.budget_restant_CE = partner.budget_CE - partner.total_invoiced_tvac_CE
+
+
+
+    ################################################################################################
+    ########################          Calculs sur Crédit Cartouche     #############################
+
+
+    #   Calcul de la somme des factures sur Crédit Cartouche
+    @api.multi
+    def _invoice_total_tvac_CC(self):
+        account_invoice = self.env['account.invoice']
+        if not self.ids:
+            self.total_invoiced_tvac_CC = 0.0
+            return True
+
+        today = '%d0101' % datetime.today().year
+
+        user_currency_id = self.env.user.company_id.currency_id.id
+        all_partners_and_children = {}
+        all_partner_ids = []
+        for partner in self:
+            # price_total is in the company currency
+            all_partners_and_children[partner] = self.with_context(active_test=False).search(
+                [('id', 'child_of', partner.id)]).ids
+            all_partner_ids += all_partners_and_children[partner]
+
+        where_query = account_invoice._where_calc([
+            ('partner_id', 'in', all_partner_ids), ('state', 'not in', ['draft', 'cancel']),
+            ('type', 'in', ('out_invoice', 'out_refund')), ('date', '>=', today),
+            ('payment_acquirer_id_budget', '=', 'Credit Cartouche')
+        ])
+        # Wire Transfer : on défini un nom à l'intermédiaire de paiement dans l'interface et on filtrer sur ce nom
+        account_invoice._apply_ir_rules(where_query, 'read')
+        from_clause, where_clause, where_clause_params = where_query.get_sql()
+
+        query = """
+              SELECT SUM(amount_total_signed) as total, partner_id
+                FROM account_invoice account_invoice
+               WHERE %s
+               GROUP BY partner_id
+            """ % where_clause
+        self.env.cr.execute(query, where_clause_params)
+        price_totals = self.env.cr.dictfetchall()
+        for partner, child_ids in all_partners_and_children.items():
+            partner.total_invoiced_tvac_CC = sum(price['total']
+                                              for price in price_totals if price['partner_id'] in child_ids)
+
+
+        #   Calcul du solde restant sur le budget Cartouche
+        @api.one
+        @api.onchange('total_invoiced_tvac_CC', 'budget_CC')
+        def _compute_budget_restant_CC(self):
+            for partner in self:
+                partner.budget_restant_CC = partner.budget_CC - partner.total_invoiced_tvac_CC
