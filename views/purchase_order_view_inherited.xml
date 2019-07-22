@@ -53,6 +53,7 @@
               <field name="partner_ref" position="after">
                   <field name="article_budgetaire" string="Article budgétaire"/>
                   <field name="num_engagement" string="Numéro d'engagement"/>
+                  <field name="date_livraison_souhaite" string="Date souhaitée/remarque pour la livraison"/>
               </field>
 
             </field>

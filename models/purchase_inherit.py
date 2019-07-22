@@ -24,6 +24,8 @@ class PurchaseOrder(models.Model):
 
     article_budgetaire = fields.Char('Article budgétaire', required=True, track_visibility='onchange')
     num_engagement = fields.Char('Numero engagement', required=True, track_visibility='onchange')
+    date_livraison_souhaite = fields.Char(string="Date de livraison souhaitée - commentaire pour la livraison",
+                                          required=False)
 
     @api.multi
     def action_po_send(self):
