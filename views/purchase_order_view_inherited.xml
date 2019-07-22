@@ -55,11 +55,11 @@
                   <field name="num_engagement" string="Numéro d'engagement"/>
               </field>
 
-               <div name="oe_title" position="after">
+               <field name="num_engagement" position="after">
                   <group name="liraison">
                     <field name="date_livraison_souhaite" string="Date souhaitée/remarque pour la livraison"/>
                   </group>
-               </div>
+               </field>
 
 
 
