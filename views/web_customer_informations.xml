@@ -31,7 +31,7 @@
 <hr></hr>
             <div class="o_form_field o_stat_info">
                   <span class="o_stat_text"> - Somme total de vos achats sur l'enveloppe Economat : </span> <br></br>
-                <strong><span t-esc="user_id.parent_id.total_invoiced_tvac_CE" />  <span class="o_stat_text">  € </span> </strong>
+                <strong><span t-esc="user_id.parent_id.total_invoiced_tvac" />  <span class="o_stat_text">  € </span> </strong>
 
             </div>
 
