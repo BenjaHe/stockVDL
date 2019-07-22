@@ -1,0 +1,12 @@
+<openerp>
+    <data>
+        <template id="website_sale_customer_comment_numero_engagement" name="Customer Comment Numero Engagement" inherit_id="website_sale.checkout">
+            <xpath expr="//div[@class='row']/div[13]" position="after">
+                <div t-attf-class="form-group col-lg-12">
+                      <label class="control-label" for="customer_comment">Indiquez votre numéro d'engagement</label>
+                      <textarea type="text" name="customer_comment_num_engagement" class="form-control" t-att-value="checkout.get('customer_comment_num_engagement')" placeholder="Il n'y a pas de numéro renseigné."/>
+                </div> 
+            </xpath>
+        </template>
+    </data>
+</openerp>

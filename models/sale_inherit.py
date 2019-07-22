@@ -14,3 +14,5 @@ class SaleOrder(models.Model):
         ('done', 'Done'),
         ('cancel', 'Cancelled'),
         ], help='Etat de la demande d achat. L état en bleu est l etat actuel de la validation.')
+
+    customer_comment_num_engagement = fields.Char(string="Numéro d'engagement renseigné par le client du webshop", required= False)

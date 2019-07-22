@@ -1,0 +1,17 @@
+<openerp>
+    <data>
+	<record id="sale_order_customer_comment" model="ir.ui.view">
+	    <field name="name">sale.order.customer.comment.form</field>
+	    <field name="model">sale.order</field>
+	    <field name="type">form</field>
+	    <field name="inherit_id" ref="sale.view_order_form"/>
+	    <field name="arch" type="xml">
+	        <xpath expr="//group[@name='sale_total']" position="after">
+                    <group>
+		        <field name="customer_comment_num_engagement"/>
+                    </group>
+		</xpath>
+	    </field>
+	</record>
+    </data>
+</openerp>

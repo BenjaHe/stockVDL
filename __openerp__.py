@@ -36,7 +36,9 @@
              'views/mrp_production_form_inherit.xml',
              'views/finition_mrp_views.xml',
              'reports/report_purchase_order_custom_vdl.xml',
-             'views/product_template_inherit.xml'
+             'views/product_template_inherit.xml',
+             'views/sale_order_view.xml',
+             'views/website_sale_checkout_view.xml'
              ],
 
 }
