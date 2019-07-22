@@ -3,11 +3,14 @@
         <template id="website_sale_customer_comment_numero_engagement" name="Customer Comment Numero Engagement" inherit_id="website_sale.checkout">
             <xpath expr="//div[@class='row']/div[13]" position="after">
                 <div t-attf-class="form-group col-lg-12">
-                      <label class="control-label" for="customer_comment">Indiquez votre numéro d'engagement</label>
+                      <label class="control-label" for="customer_comment">Indiquez votre numéro d'engagement.</label>
                       <textarea type="text" name="customer_comment_num_engagement" class="form-control" t-att-value="checkout.get('customer_comment_num_engagement')" placeholder="Il n'y a pas de numéro renseigné."/>
 
-                      <label class="control-label" for="customer_comment">Indiquez votre numéro d'article budgétaire</label>
+                      <label class="control-label" for="customer_comment">Indiquez votre numéro d'article budgétaire.</label>
                       <textarea type="text" name="customer_comment_num_article" class="form-control" t-att-value="checkout.get('customer_comment_num_article')" placeholder="Il n'y a pas de numéro renseigné."/>
+
+                     <label class="control-label" for="date_livraison_souhaite">Indiquez la date souhaitée pour la livraison ainsi que toutes informations nécessaires à celle-ci.</label>
+                      <textarea type="text" name="date_livraison_souhaite" class="form-control" t-att-value="checkout.get('customer_comment_num_article')" placeholder="Il n'y a pas d'instruction renseignée."/>
 
                 </div>
             </xpath>

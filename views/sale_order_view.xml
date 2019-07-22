@@ -10,6 +10,7 @@
                     <group>
 						<field name="customer_comment_num_engagement"/>
 						<field name="customer_comment_num_article"/>
+						<field name="date_livraison_souhaite"/>
                     </group>
 		</xpath>
 	    </field>

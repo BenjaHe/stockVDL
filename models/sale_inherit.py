@@ -16,5 +16,6 @@ class SaleOrder(models.Model):
         ], help='Etat de la demande d achat. L état en bleu est l etat actuel de la validation.')
 
     customer_comment_num_engagement = fields.Char(string="Numéro d'engagement renseigné par le client du webshop", required= False)
-    customer_comment_num_article = fields.Char(string="Numéro d'article budgétaire rensigné par le client du webshop",
-                                                  required=False)
+    customer_comment_num_article = fields.Char(string="Numéro d'article budgétaire rensigné par le client du webshop", required=False)
+    date_livraison_souhaite = fields.Char(string="Date de livraison souhaitée - commentaire pour la livraison",
+                                               required=False)
