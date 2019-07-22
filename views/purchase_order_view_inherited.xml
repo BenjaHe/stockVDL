@@ -56,9 +56,9 @@
               </field>
 
                <field name="name" position="after">
-                  <group name="liraison">
+                  <h5 name="liraison">
                     <field name="date_livraison_souhaite" string="Date souhaitée/remarque pour la livraison"/>
-                  </group>
+                  </h5>
                </field>
 
 
