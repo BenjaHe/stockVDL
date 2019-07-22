@@ -28,5 +28,6 @@ class CheckoutComment(website_sale):
             current_order = request.website.sale_get_order(context=context)
             sale_order_obj.write(cr, SUPERUSER_ID, [current_order.id],
                                  {'customer_comment_num_engagement': data.get('customer_comment_num_engagement', None)},
+                                 {'customer_comment_num_article': data.get('customer_comment_num_article', None)},
                                  context=context)
         return super(CheckoutComment, self).checkout_values(data)
