@@ -9,6 +9,9 @@
 
             <xpath expr="//div[@class='row mt32 mb32']" position="after">
                 <group>
+                    <h4>Information pour la livraison :</h4>
+
+                        <span t-field="o.date_livraison_souhaite"/> <br></br>
 
                     <h4>Informations à rappeler OBLIGATOIREMENT sur votre facture :</h4>
 
