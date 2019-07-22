@@ -56,9 +56,9 @@
               </field>
 
                <field name="name" position="after">
-                  <h5 name="liraison">
+                  <div name="liraison">
                     <field name="date_livraison_souhaite" string="Date souhaitée/remarque pour la livraison"/>
-                  </h5>
+                  </div>
                </field>
 
 
