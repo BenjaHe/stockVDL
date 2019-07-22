@@ -55,7 +55,7 @@
                   <field name="num_engagement" string="Numéro d'engagement"/>
               </field>
 
-               <field name="num_engagement" position="after">
+               <field name="name" position="after">
                   <group name="liraison">
                     <field name="date_livraison_souhaite" string="Date souhaitée/remarque pour la livraison"/>
                   </group>
