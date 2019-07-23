@@ -59,6 +59,19 @@
 
             </field>
         </record>
+
+        <record id="purchase_order_tree_inherited" model="ir.ui.view">
+            <field name="name">purchase.order.tree.inherited</field>
+            <field name="model">purchase.order</field>
+            <field name="inherit_id" ref="purchase.purchase_order_tree"/>
+            <field name="arch" type="xml">
+
+                <field name="date_order" position="replace">
+                    <field name="create_date" string="Date de création"/>
+                </field>
+
+             </field>
+        </record>
     </data>
 </openerp>
 
