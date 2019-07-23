@@ -227,7 +227,7 @@ class ResPartner(models.Model):
     def _compute_total_invoiced_tvac_CE_web_test(self):
             account_invoice = self.env['account.invoice']
             if not self.ids:
-                self.total_invoiced_tvac_CE_web_test = 0.0
+                self.total_invoiced_tvac_CE_web_test = 0.1
                 return True
 
             today = '%d0101' % datetime.today().year
