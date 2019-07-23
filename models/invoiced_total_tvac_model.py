@@ -261,7 +261,7 @@ class ResPartner(models.Model):
             self.env.cr.execute(query, where_clause_params)
             price_totals = self.env.cr.dictfetchall()
             for partner, child_ids in all_partners_and_children.items():
-                _logger.warning(u"JE PASSE DANS MA FONCTION DE CALCUL WEB")
+                _logger.warning(u"JE PASSE DANS MA FONCTION DE CALCUL WEB TEST")
                 partner.total_invoiced_tvac_CE_web_test = sum(price['total']
                                                      for price in price_totals if price['partner_id'] in child_ids)
 
