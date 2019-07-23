@@ -263,13 +263,13 @@ class ResPartner(models.Model):
             for partner, child_ids in all_partners_and_children.items():
                 _logger.warning(u"JE PASSE DANS MA FONCTION DE CALCUL WEB TEST")
                 partner.total_invoiced_tvac_CE_web_test = sum(price['total']
-                                                     for price in price_totals if price['partner_id'] in child_ids)
+                                                     for price in price_totals )
 
             _logger.warning(u"PARAMETRE DU QUERY DE LA PAGE WEB {TOTAL_FACTURES_web}".format(TOTAL_FACTURES_web=where_clause_params))
             _logger.warning(u"Liste des partenaires pour calcul factures web {partners}".format(
                 partners=all_partner_ids))
-            _logger.warning(u"child_ids {child_ids}".format(
-                child_ids=child_ids))
+            _logger.warning(u"Montant de price_totals {price_totals}".format(
+                price_totals=price_totals))
             _logger.warning(u"VALEUR du INVOICE TVA CE TOTAL {price}".format(
                 price=partner.total_invoiced_tvac_CE_web_test))
   #############################################################################################################
