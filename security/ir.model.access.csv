@@ -1,7 +1,12 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_finition,finition.users,model_finition_mrp,base.group_user,1,1,1,0
 sale_order_comptable,comptable.users,model_sale_order,base.group_user,1,1,1,0
-sale_order_comptable,comptable.users,model_sale_order,base.group_user,1,1,1,0
 sale_order_line_comptable,comptable.users,model_sale_order_line,base.group_user,1,1,1,0
 stock_picking_comptable,stock.picking.users,model_stock_picking,base.group_user,1,1,1,0
 invoice_comptable,comptable.users,model_account_invoice,base.group_user,1,0,0,0
+sale_order_observer,observer.users.sale,model_sale_order,base.group_bdc_observer,1,0,0,0
+sale_order_line_observer,observer.users.sale.line,model_sale_order_line,base.group_bdc_observer,1,0,0,0
+purchase_order_observer,observer.users.purchase,model_purchase_order,base.group_bdc_observer,1,0,0,0
+purchase_order_line_observer,observer.users.purchase.line,model_purchase_order_line,base.group_bdc_observer,1,0,0,0
+invoice_order_observer,observer.users.invoice,model_invoice,base.group_bdc_observer,1,0,0,0
+stock_picking_observer,observer.users.stock.picking,model_stock_picking,base.group_bdc_observer,1,0,0,0
