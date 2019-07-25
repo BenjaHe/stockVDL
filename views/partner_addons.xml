@@ -17,7 +17,7 @@
             </field>
 
 
-            <field name="supplier" position="after">
+            <field name="ref" position="after">
                 <field name="fournisseur_economat" string="Est un fournisseur de l'Economat"/>
             </field>
 
