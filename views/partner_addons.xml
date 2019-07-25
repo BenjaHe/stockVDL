@@ -16,6 +16,11 @@
                 <field name="directeur" string="Directeur"/>
             </field>
 
+
+            <field name="supplier" position="after">
+                <field name="fournisseur_economat" string="Est un fournisseur de l'Economat"/>
+            </field>
+
           </field>
       </record>
   </data>

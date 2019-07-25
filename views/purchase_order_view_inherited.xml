@@ -56,7 +56,6 @@
                   <field name="date_livraison_souhaite" string="Date/remarque pour la livraison"/>
               </field>
 
-
             </field>
         </record>
 
