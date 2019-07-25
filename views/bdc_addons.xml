@@ -34,8 +34,8 @@
 
         <menuitem id="menu_bdc_direction_list"
           name="BdC fournisseur à valider par la direction"
-          action="action_bdc_custom_directeur,group_bdc_observers"
-          groups="group_bdc_directeur"
+          action="action_bdc_custom_directeur"
+          groups="group_bdc_directeur,group_bdc_observers"
           sequence="20"/>
 
 
