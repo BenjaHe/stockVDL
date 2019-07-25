@@ -4,9 +4,9 @@ sale_order_comptable,comptable.users,model_sale_order,base.group_user,1,1,1,0
 sale_order_line_comptable,comptable.users,model_sale_order_line,base.group_user,1,1,1,0
 stock_picking_comptable,stock.picking.users,model_stock_picking,base.group_user,1,1,1,0
 invoice_comptable,comptable.users,model_account_invoice,base.group_user,1,0,0,0
-sale_order_observer,observers.users.sale,model_sale_order,base.group_bdc_observers,1,0,0,0
-sale_order_line_observer,observers.users.sale.line,model_sale_order_line,base.group_bdc_observers,1,0,0,0
-purchase_order_observer,observers.users.purchase,model_purchase_order,base.group_bdc_observers,1,0,0,0
-purchase_order_line_observer,observers.users.purchase.line,model_purchase_order_line,base.group_bdc_observers,1,0,0,0
-invoice_order_observer,observers.users.invoice,model_invoice,base.group_bdc_observers,1,0,0,0
-stock_picking_observer,observers.users.stock.picking,model_stock_picking,base.group_bdc_observers,1,0,0,0
+sale_order_observer,observers.users.sale,model_sale_order,group_bdc_observers,1,0,0,0
+sale_order_line_observer,observers.users.sale.line,model_sale_order_line,group_bdc_observers,1,0,0,0
+purchase_order_observer,observers.users.purchase,model_purchase_order,group_bdc_observers,1,0,0,0
+purchase_order_line_observer,observers.users.purchase.line,model_purchase_order_line,group_bdc_observers,1,0,0,0
+invoice_order_observer,observers.users.invoice,model_invoice,group_bdc_observers,1,0,0,0
+stock_picking_observer,observers.users.stock.picking,model_stock_picking,group_bdc_observers,1,0,0,0
