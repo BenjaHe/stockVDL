@@ -43,6 +43,7 @@
              </field>
 
               <field name="company_id" position="after">
+                    <field name="fournisseur_economat" string="Est un fournisseur Economat"/>
                     <field name="dest_address_id" string="Client interne"/>
                     <field name="directeur_id" string="Directeur responsable"/>
                     <field name="comptable_id" string="Comptable principal"/>

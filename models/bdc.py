@@ -52,6 +52,10 @@ class PurchaseOrder(models.Model):
                                    readonly=True,
                                    required=False)
 
+    fournisseur_economat = fields.Boolean(related='partner_id.fournisseur_economat', string='Est un fournisseur de l économat', readonly=True,
+                                     required=False)
+
+
 
 class Product(models.Model):
     _inherit = ['product.template']
