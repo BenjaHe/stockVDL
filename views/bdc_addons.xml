@@ -28,13 +28,13 @@
          <menuitem id="menu_bdc_comptable_list"
           name="Panier client à valider par le comptable"
           action="action_bdc_custom_comptable"
-          groups="group_bdc_comptable"
+          groups="group_bdc_comptable,group_bdc_observers"
           sequence="5"/>
         <!--  groups="group_bdc_comptable" -->
 
         <menuitem id="menu_bdc_direction_list"
           name="BdC fournisseur à valider par la direction"
-          action="action_bdc_custom_directeur"
+          action="action_bdc_custom_directeur,group_bdc_observers"
           groups="group_bdc_directeur"
           sequence="20"/>
 
