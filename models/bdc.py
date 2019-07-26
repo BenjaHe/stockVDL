@@ -10,8 +10,8 @@ from openerp.exceptions import Warning
 class ResPartner(models.Model):
     _inherit = ['res.partner']
 
-    comptable = fields.Many2one('res.users', string='Comptable attitré', required=False, track_visibility='onchange')
-    comptables = fields.Many2many('res.users', string='Comptable temporaire', required=False, track_visibility='onchange')
+    comptable = fields.Many2one('res.users', string='Comptable principal', required=False, track_visibility='onchange')
+    comptables = fields.Many2many('res.users', string='Comptables autorisés', required=False, track_visibility='onchange')
 
     directeur = fields.Many2one('res.users', string='Directeur validateur', required=False, track_visibility='onchange')
     num_comptable = fields.Char(string='Numéro du comptable', required=False, track_visibility='onchange', help='A renseigner uniquement pour les comptables.')
@@ -24,7 +24,7 @@ class Sale(models.Model):
 
     comptable_id = fields.Many2one("res.users", related='partner_id.comptable', string="Comptable principal", readonly=True,
                                    required=False)
-    comptable_ids = fields.Many2many("res.users", related='partner_id.comptables', string="CComptables autorisés", readonly=True,
+    comptable_ids = fields.Many2many("res.users", related='partner_id.comptables', string="Comptables autorisés", readonly=True,
                                      required=False)
     directeur_id = fields.Many2one("res.users", related='partner_id.directeur', string="Directeur", readonly=True,
                                    required=False)
