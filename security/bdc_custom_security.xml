@@ -52,14 +52,14 @@
             <field name="name">Les comptables ne voient que leurs bons de commande</field>
             <field name="model_id" ref="model_sale_order"/>
             <field name="groups" eval="[(4, ref('base.group_user'))]"/>
-            <field name="domain_force">[('comptable_id','=',user.id)]</field>
+            <field name="domain_force">[('comptable_ids','=',user.id)]</field>
         </record>
 
         <record id="bdc_own_directeur" model="ir.rule">
             <field name="name">Les directeurs et les compatbles ne voient que leurs bons de commande fournisseur</field>
             <field name="model_id" ref="model_purchase_order"/>
             <field name="groups" eval="[(4, ref('base.group_user'))]"/>
-            <field name="domain_force">['|',('directeur_id','=',user.id),('comptable_id','=',user.id), ('fournisseur_economat','=',False)]</field>
+            <field name="domain_force">['|',('directeur_id','=',user.id),('comptable_ids','=',user.id), ('fournisseur_economat','=',False)]</field>
         </record>
 
         <record id="bdc_view_all" model="ir.rule">
