@@ -77,7 +77,7 @@
         </record>
 
         <!-- Vue SEARCH du modèle PURCHASE ORDER pour ne pas avoir les commandes cartouches dans la liste des PO -->
-	  <record id="search_purchase_order_custom" model="ir.ui.view">
+<!--	  <record id="search_purchase_order_custom" model="ir.ui.view">
 	  	<field name="name">Purchase Search Custom</field>
 	  	<field name="model">purchase.order</field>
         <field name="inherit_id" ref="purchase.view_purchase_order_search"/>
@@ -93,7 +93,7 @@
 
 	  		</search>
 	  	</field>
-	  </record>
+	  </record>  -->
 
 
     </data>
