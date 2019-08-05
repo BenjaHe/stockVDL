@@ -81,7 +81,7 @@
 	  	<field name="name">Purchase Search Custom</field>
 	  	<field name="model">purchase.order</field>
         <field name="inherit_id" ref="purchase.view_purchase_order_search"/>
-	  	<filter name="arch" type="xml">
+	  	<field name="arch" type="xml">
 	  		<search string="Vue Search Purchase Custom">
 
             <filter name="orders" position="after">
@@ -92,7 +92,7 @@
             </filter>
 
 	  		</search>
-	  	</filter>
+	  	</field>
 	  </record>
 
 
