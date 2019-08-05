@@ -84,12 +84,12 @@
 	  	<field name="arch" type="xml">
 	  		<search string="Vue Search Purchase Custom">
 
-            <filter name="orders" position="after">
-				<separator/>
-				<filter name="fournisseur_non_economat" string="Fournisseur non Economat" domain="[('fournisseur_economat','!=',True)]" />
-				<separator/>
-				<filter name="comptable_principal" string="Les bons où je suis le comptable principal" domain="[('comptable_id','=',uid)]" />
-            </filter>
+                <field name="orders" position="after">
+                    <separator/>
+                    <filter name="fournisseur_non_economat" string="Fournisseur non Economat" domain="[('fournisseur_economat','!=',True)]" />
+                    <separator/>
+                    <filter name="comptable_principal" string="Les bons où je suis le comptable principal" domain="[('comptable_id','=',uid)]" />
+                </field>
 
 	  		</search>
 	  	</field>
