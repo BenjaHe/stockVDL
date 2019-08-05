@@ -88,7 +88,7 @@
                     <separator/>
                     <filter name="fournisseur_non_economat" string="Fournisseur non Economat" domain="[('fournisseur_economat','!=',True)]" />
                     <separator/>
-                    <filter name="comptable_principal" string="Les bons où je suis le comptable principal" domain="[('comptable_id','=',uid)]" />
+                  <!--  <filter name="comptable_principal" string="Les bons où je suis le comptable principal" domain="[('comptable_id','=',uid)]" />  -->
                 </xpath>
 
 
