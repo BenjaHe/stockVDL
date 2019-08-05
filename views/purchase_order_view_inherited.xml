@@ -77,23 +77,23 @@
         </record>
 
         <!-- Vue SEARCH du modèle PURCHASE ORDER pour ne pas avoir les commandes cartouches dans la liste des PO -->
-<!--	  <record id="search_purchase_order_custom" model="ir.ui.view">
+	  <record id="search_purchase_order_custom" model="ir.ui.view">
 	  	<field name="name">Purchase Search Custom</field>
 	  	<field name="model">purchase.order</field>
         <field name="inherit_id" ref="purchase.view_purchase_order_search"/>
 	  	<field name="arch" type="xml">
-	  		<search string="Vue Search Purchase Custom">
 
-                <field name="orders" position="after">
+
+                <xpath expr="//filter[@name='orders']" position="after">
                     <separator/>
                     <filter name="fournisseur_non_economat" string="Fournisseur non Economat" domain="[('fournisseur_economat','!=',True)]" />
                     <separator/>
                     <filter name="comptable_principal" string="Les bons où je suis le comptable principal" domain="[('comptable_id','=',uid)]" />
-                </field>
+                </xpath>
 
-	  		</search>
+
 	  	</field>
-	  </record>  -->
+	  </record>
 
 
     </data>
