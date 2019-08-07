@@ -8,7 +8,4 @@ sale_order_comptable,comptable.vente,model_sale_order,stockVDL.group_bdc_comptab
 sale_order_line_comptable,comptable.ligne.vente,model_sale_order_line,stockVDL.group_bdc_comptable,1,1,1,0
 stock_picking_comptable,comptable.picking,model_stock_picking,stockVDL.group_bdc_comptable,1,1,1,0
 invoice_comptable,comptable.facture,model_account_invoice,stockVDL.group_bdc_comptable,1,0,0,0
-purchase_comptable,comptable.achat,model_purchase_order,stockVDL.group_bdc_comptable,1,1,1,0
-purchase_line_comptable,comptable.achat_line,model_purchase_order_line,stockVDL.group_bdc_comptable,1,1,1,0
-purchase_directeur,comptable.achat,model_purchase_order,stockVDL.group_bdc_directeur,1,1,1,0
-purchase_line_directeur,comptable.achat_line,model_purchase_order_line,stockVDL.group_bdc_directeur,1,1,1,0
+
