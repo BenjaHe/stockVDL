@@ -6,3 +6,5 @@ stock_picking_comptable,comptable.picking,model_stock_picking,stockVDL.group_bdc
 invoice_comptable,comptable.facture,model_account_invoice,stockVDL.group_bdc_comptable,1,0,0,0
 purchase_comptable,comptable.achat,model_purchase_order,stockVDL.group_bdc_comptable,1,1,1,0
 purchase_directeur,directeur.achat,model_purchase_order,stockVDL.group_bdc_directeur,1,1,1,0
+purchase_line_comptable,comptable.line.achat,model_purchase_order_line,stockVDL.group_bdc_comptable,1,1,1,0
+purchase_line_directeur,directeur.line.achat,model_purchase_order_line,stockVDL.group_bdc_directeur,1,1,1,0
