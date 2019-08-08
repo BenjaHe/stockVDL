@@ -1,9 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_finition,finition.users,model_finition_mrp,base.group_user,1,1,1,0
-sale_order_observateur,observateur.vente,model_sale_order,stockVDL.group_bdc_observers,1,0,0,0
-sale_order_line_observateur,observateur.ligne.vente,model_sale_order_line,stockVDL.group_bdc_observers,1,0,0,0
-stock_picking_observateur,observateur.picking,model_stock_picking,stockVDL.group_bdc_observers,1,0,0,0
-invoice_observateur,observateur.facture,model_account_invoice,stockVDL.group_bdc_observers,1,0,0,0
 sale_order_comptable,comptable.vente,model_sale_order,stockVDL.group_bdc_comptable,1,1,1,0
 sale_order_line_comptable,comptable.ligne.vente,model_sale_order_line,stockVDL.group_bdc_comptable,1,1,1,0
 stock_picking_comptable,comptable.picking,model_stock_picking,stockVDL.group_bdc_comptable,1,1,1,0
