@@ -37,23 +37,31 @@ class SaleOrder(models.Model):
 class PurchaseOrder(models.Model):
     _inherit = ['purchase.order']
 
-    directeur_id = fields.Many2one("res.users", related='dest_address_id.directeur', string="Directeur",
+    directeur_id = fields.Many2one("res.users", related='dest_address_id.directeur',
+                                   string="Directeur",
                                    readonly=True,
                                    required=False)
-    comptable_id = fields.Many2one("res.users", related='dest_address_id.comptable', string="Comptable principal",
+    comptable_id = fields.Many2one("res.users", related='dest_address_id.comptable',
+                                   string="Comptable principal",
                                    readonly=True,
                                    required=False)
-    comptable_ids = fields.Many2many("res.users", related='dest_address_id.comptables', string="Comptables autorisés", readonly=True,
+    comptable_ids = fields.Many2many("res.users",
+                                     related='dest_address_id.comptables',
+                                     string="Comptables autorisés", readonly=True,
                                      required=False)
-    tel_comptable_id = fields.Char("res.users", related='dest_address_id.comptable.mobile',
+    tel_comptable_id = fields.Char("res.users",
+                                   related='dest_address_id.comptable.mobile',
                                    readonly=True,
                                    required=False)
-    num_comptable_id = fields.Char("res.users", related='dest_address_id.comptable.num_comptable',
+    num_comptable_id = fields.Char("res.users",
+                                   related='dest_address_id.comptable.num_comptable',
                                    readonly=True,
                                    required=False)
 
-    fournisseur_economat = fields.Boolean(related='partner_id.fournisseur_economat', string='Est un fournisseur de l économat', readonly=True,
-                                     required=False)
+    fournisseur_economat = fields.Boolean(related='partner_id.fournisseur_economat',
+                                          string='Est un fournisseur de l économat',
+                                          readonly=True,
+                                          required=False)
 
 
 
