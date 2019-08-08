@@ -6,7 +6,7 @@ stock_picking_comptable,comptable.picking,model_stock_picking,stockVDL.group_bdc
 invoice_comptable,comptable.facture,model_account_invoice,stockVDL.group_bdc_comptable,1,0,0,0
 purchase_comptable,comptable.achat,model_purchase_order,stockVDL.group_bdc_comptable,1,1,1,0
 purchase_directeur,directeur.achat,model_purchase_order,stockVDL.group_bdc_directeur,1,1,1,0
-sale_order_observateur,observateur.vente,model_sale_order,stockVDL.group_bdc_observers,1,0,1,0
-sale_order_line_observateur,observateur.ligne.vente,model_sale_order_line,stockVDL.group_bdc_observers,1,0,1,0
-stock_picking_observateur,observateur.picking,model_stock_picking,stockVDL.group_bdc_observers,1,0,1,0
-invoice_observateur,observateur.facture,model_account_invoice,stockVDL.group_bdc_observers,1,0,1,0
+sale_order_observateur,observateur.vente,model_sale_order,stockVDL.group_bdc_observers,1,0,0,0
+sale_order_line_observateur,observateur.ligne.vente,model_sale_order_line,stockVDL.group_bdc_observers,1,0,0,0
+stock_picking_observateur,observateur.picking,model_stock_picking,stockVDL.group_bdc_observers,1,0,0,0
+invoice_observateur,observateur.facture,model_account_invoice,stockVDL.group_bdc_observers,1,0,0,0
