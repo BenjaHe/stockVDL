@@ -10,3 +10,7 @@ sale_order_observateur,observateur.vente,model_sale_order,stockVDL.group_bdc_obs
 sale_order_line_observateur,observateur.ligne.vente,model_sale_order_line,stockVDL.group_bdc_observers,1,0,0,0
 stock_picking_observateur,observateur.picking,model_stock_picking,stockVDL.group_bdc_observers,1,0,0,0
 invoice_observateur,observateur.facture,model_account_invoice,stockVDL.group_bdc_observers,1,0,0,0
+purchase_comptable_user,comptable.achat,model_purchase_order,group_purchase_user,1,1,1,0
+purchase_line_comptable_user,comptable.achat_line,model_purchase_order_line,group_purchase_user,1,1,1,0
+purchase_directeur_user,directeur.achat,model_purchase_order,group_purchase_user,1,1,1,0
+purchase_line_directeur_user,directeur.achat_line,model_purchase_order_line,group_purchase_user,1,1,1,0
