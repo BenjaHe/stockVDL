@@ -29,7 +29,7 @@
              'views/view_order_form_acquirer_inherited.xml',
              'views/bom_line_custom.xml',
              'views/sale_order_view_inherit.xml',
-             'views/web_customer_informations.xml',
+             'views/website_customer_informations.xml',
              'views/partner_addons.xml',
              'views/bdc_addons.xml',
              'views/purchase_order_view_inherited.xml',
