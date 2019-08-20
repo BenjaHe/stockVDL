@@ -17,7 +17,7 @@
 	        name="BdC fournisseur à valider par la direction"
 	        res_model="purchase.order"
 	        view_mode="tree,form,pivot"
-            domaine="[('fournisseur_economat','=',False)]"
+            domain="[('fournisseur_economat','=',False)]"
             />
 
         <!--  domain="[('directeur_id','=',uid)]"   -->
@@ -40,8 +40,6 @@
 
 
         <!-- ################################################## OVER RIDE les ACT WINDOWS pour ne pas que les comptables et la direction voient d'autres menus que les leurs  ########  -->
-
-
 
 
 
