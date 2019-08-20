@@ -2,6 +2,8 @@
 
 <openerp>
   <data>
+
+      <!-- On a rendu la vue non éditable (readonly=1) pour bloquer l'édition pour les non responsables de stock  -->
       <record id="view_form_AccountTotal_inherited" model="ir.ui.view">
           <field name="name">AccountTotal Contacts Form</field>
           <field name="model">res.partner</field>
@@ -9,13 +11,39 @@
           <field name="arch" type="xml">
 
                 <field name="function" position="before">
-                  <field name="budget_CE" string="Budget Economat (BE)"/>
-                  <field name="budget_CP" string="Budget Papier (BP) "/>
-                  <field name="budget_CC" string="Budget Cartouche (BC)"/>
-                  <field name="budget_test" string="Budget Total"/>
+                  <field name="budget_CE" string="Budget Economat (BE)" readonly="1"/>
+                  <field name="budget_CP" string="Budget Papier (BP) " readonly="1"/>
+                  <field name="budget_CC" string="Budget Cartouche (BC)" readonly="1"/>
+                  <field name="budget_test" string="Budget Total" readonly="1"/>
                 </field>
 
+          </field>
+      </record>
 
+    <!-- Ajout d'une nouvelle vue héritée permettant d'éditer les champs budget qu'on a bloqué au dessus
+                        pour les responsables des stock                                           -->
+      <record id="view_form_AccountTotal_editable" model="ir.ui.view">
+          <field name="name">AccountTotal Contacts Form Editable</field>
+          <field name="model">res.partner</field>
+          <field name="inherit_id" ref="stockVDL.view_form_AccountTotal_inherited"/>
+          <field name="groups_id" eval="[(6,0,[ref('stock.group_stock_manager')])]"/>
+          <field name="arch" type="xml">
+
+                <field name="budget_CE" position="attributes">
+                  <attribute name="readonly" eval="False"/>
+                </field>
+
+                <field name="budget_CP" position="attributes">
+                  <attribute name="readonly" eval="False"/>
+                </field>
+
+                <field name="budget_CC" position="attributes">
+                  <attribute name="readonly" eval="False"/>
+                </field>
+
+                <field name="budget_test" position="attributes">
+                  <attribute name="readonly" eval="False"/>
+                </field>
 
           </field>
       </record>

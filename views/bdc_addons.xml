@@ -17,7 +17,7 @@
 	        name="BdC fournisseur à valider par la direction"
 	        res_model="purchase.order"
 	        view_mode="tree,form,pivot"
-
+            domaine="[('fournisseur_economat','=',False)]"
             />
 
         <!--  domain="[('directeur_id','=',uid)]"   -->
