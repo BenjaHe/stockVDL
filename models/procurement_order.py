@@ -22,7 +22,7 @@ class ProcurementOrder(models.Model):
                       'num_engagement':proc.sale_line_id.order_id.customer_comment_num_engagement,
                       'date_livraison_souhaite':proc.sale_line_id.order_id.date_livraison_souhaite}
                 proc.purchase_id.write(vals)
-         return
+        return
 
 
 
