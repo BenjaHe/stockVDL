@@ -24,14 +24,14 @@
             </div>
 <hr></hr>
             <div class="o_form_field o_stat_info">
-                  <span class="o_stat_text"> - Somme total de vos achats sur l'enveloppe Economat : </span> <br></br>
+                  <span class="o_stat_text"> - Somme total de vos achats sur l'enveloppe Economat : </span>
                 <strong><span t-esc="user.parent_id.total_invoiced_tvac_CE_web_test" />  <span class="o_stat_text">  € </span> </strong>
 
             </div>
 
 <hr></hr>
             <div class="o_form_field o_stat_info">
-                  <span class="o_stat_text"> - Budget restant sur l'enveloppe Economat : </span> <br></br>
+                  <span class="o_stat_text"> - Budget restant sur l'enveloppe Economat : </span>
                   <strong><span t-esc="user.parent_id.budget_restant_CE" />  <span class="o_stat_text">  € </span> </strong>
             </div>
 
