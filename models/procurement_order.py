@@ -6,6 +6,8 @@ from openerp import models, fields, api, exceptions
 class ProcurementOrder(models.Model):
     _inherit='procurement.order'
 
+
+    # Méthode pour surcharger une méthode --> On surcharge la méthode "make_po" avec notre nouvelle méthode "propagate_so_info"
     @api.multi
     def make_po(self):
         res = super(ProcurementOrder, self).make_po()
@@ -14,6 +16,7 @@ class ProcurementOrder(models.Model):
 
         return res
 
+    # on surcharge la méthode initiale en lui faisant faire quelques lignes en plus
     @api.multi
     def propagate_so_info(self):   # le self est ici notre liste de procurements donc on va faire une boucle
         for proc in self:
