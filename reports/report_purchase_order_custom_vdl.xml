@@ -7,11 +7,16 @@
         <template id="report_purchase_order_custom_vdl"
                   inherit_id="purchase.report_purchaseorder_document">
 
+            <xpath expr="//div[@class='row mt32 mb32']" position="before">
+                    <h2 t-if="o.origin">N° de panier en référence : <span t-field="o.origin"/></h2>
+            </xpath>
+
             <xpath expr="//div[@class='row mt32 mb32']" position="after">
                 <group>
                     <h4>Information pour la livraison :</h4>
 
                         <span t-field="o.date_livraison_souhaite"/> <br></br>
+
 
                     <h4>Informations à rappeler OBLIGATOIREMENT sur votre facture :</h4>
 
