@@ -22,7 +22,7 @@
 
         <!--  domain="[('directeur_id','=',uid)]"   -->
 
-        <!-- ############# MENU to open specific view Bons de commande ########################  -->
+        <!-- ############# MENU to open specific view Bons de commande #############  -->
 
 
          <menuitem id="menu_bdc_comptable_list"
@@ -30,7 +30,6 @@
           action="action_bdc_custom_comptable"
           groups="group_bdc_comptable,group_bdc_observers"
           sequence="5"/>
-        <!--  groups="group_bdc_comptable" -->
 
         <menuitem id="menu_bdc_direction_list"
           name="BdC fournisseur à valider par la direction"
@@ -39,7 +38,7 @@
           sequence="20"/>
 
 
-        <!-- ################################################## OVER RIDE les ACT WINDOWS pour ne pas que les comptables et la direction voient d'autres menus que les leurs  ########  -->
+        <!-- ####### OVERIDE les ACT WINDOWS pour ne pas que les comptables et la direction voient d'autres menus que les leurs  ########  -->
 
 
 

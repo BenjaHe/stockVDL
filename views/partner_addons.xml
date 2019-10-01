@@ -2,6 +2,7 @@
 
 <openerp>
   <data>
+      <!-- VUE FICHE CONTACT -->
       <record id="view_form_addons_partner_inherited" model="ir.ui.view">
           <field name="name">Addons Contacts Form</field>
           <field name="model">res.partner</field>
