@@ -27,6 +27,14 @@
                         <attribute name="invisible">1</attribute>
                 </xpath>
 
+                <xpath expr="//button[@name='action_done']" position="replace">
+                        <button name="action_done" type="object" string="Set to Done" states="sale"
+                                groups="purchase.group_bdc_view_all_achats"
+                                help="If a sale order is done, you cannot modify it manually anymore.
+                                However, you will still be able to invoice or deliver.
+                                This is used to freeze the sale order."/>
+                </xpath>
+
 
                 <xpath expr="//field[@name='payment_term_id']" position="after">
                     <field name="comptable_id" string="Comptable principal"/>
