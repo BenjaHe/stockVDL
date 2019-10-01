@@ -29,7 +29,7 @@
 
                 <xpath expr="//button[@name='action_done']" position="replace">
                         <button name="action_done" type="object" string="Set to Done" states="sale"
-                                groups="purchase.group_bdc_view_all_achats"
+                                groups="purchase.bdc_view_all"
                                 help="If a sale order is done, you cannot modify it manually anymore.
                                 However, you will still be able to invoice or deliver.
                                 This is used to freeze the sale order."/>
