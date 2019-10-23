@@ -68,6 +68,9 @@ class PurchaseOrder(models.Model):
 class Product(models.Model):
     _inherit = ['product.template']
 
+    # Id de la taxe de l'article dans Microsoft Dyn (utilisé pour pousser les commandes dans Dyn)
+    dyn_taxe = fields.Char(string="Id de la taxe dans Dyn", required=False)
+
     # Ajout d'un prix TVAC (21 %) --> car les prix sont tous HTVA en ce compris sur le site web
     prix_tvac = fields.Monetary(compute='_prix_tvac', string ='Prix TVAC (21 % - pour info)', help='A titre informatif car le calcul des commandes se fait sur base du prix HTVA.')
 
