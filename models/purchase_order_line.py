@@ -7,20 +7,20 @@ class PurchaseOrderline(models.Model):
     _inherit = "purchase.order.line"
     _description = "Purchase Line Custom for Microsoft Dynamics"
 
-    dyn_orderaccount = fields.Char(string="Id Dyn du fournisseur",
+    dyn_orderaccount_id = fields.Char(string="Id Dyn du fournisseur",
                                       required=False)
-    dyn_buyergroupid = fields.Integer(related='order_id.dyn_buyergroupid',
+    dyn_buyergroupid_id = fields.Char(related='order_id.dyn_buyergroupid',
                                       string="Num Dyn du CP",
                                       required=False)
-    dyn_taxgroup = fields.Char(related='product_id.dyn_taxgroup',
+    dyn_taxgroup_id = fields.Char(related='product_id.dyn_taxgroup',
                               string="Champs TaxGroup issu de Dynamics",
                               required=False)
 
-    dyn_taxitemgroup = fields.Char(related='product_id.dyn_taxitemgroup',
+    dyn_taxitemgroup_id = fields.Char(related='product_id.dyn_taxitemgroup',
                                string="Champs TaxGroup issu de Dynamics",
                                required=False)
 
-    dyn_buyergroupid = fields.Char(related='product_id.sellers_id.name.dyn_buyergroupid',
+    dyn_buyergroupid_id = fields.Char(related='product_id.sellers_id.name.dyn_buyergroupid',
                                    string="Champs Buyergroupid issu de Dynamics",
                                    required=False)
 
