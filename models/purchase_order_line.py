@@ -20,9 +20,9 @@ class PurchaseOrderline(models.Model):
                                string="Champs TaxGroup issu de Dynamics",
                                required=False)
 
-    dyn_buyergroupid_id = fields.Char(related='product_id.sellers_id.name.dyn_buyergroupid',
-                                   string="Champs Buyergroupid issu de Dynamics",
-                                   required=False)
+#    dyn_buyergroupid_id = fields.Char(related='product_id.sellers_id.name.dyn_buyergroupid',
+#                                   string="Champs Buyergroupid issu de Dynamics",
+#                                   required=False)
 
 # class AccountTax(models.Model):
 #     _name = "account.tax"
