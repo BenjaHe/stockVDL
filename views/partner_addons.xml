@@ -15,7 +15,8 @@
                 <field name="num_comptable" string="Numéro du comptable (si comptable)"/>
                 <field name="num_mon_comptable" string="Numéro du comptable associé" readonly="1"/>
                 <field name="directeur" string="Directeur"/>
-                <field name="dyn_buyergroupid" string="Comptable dans Dynamics" readonly="1"/>
+                <field name="dyn_buyergroupid" string="Comptable dans Dynamics"/>
+                <field name="mon_dyn_buyergroupid" string="Comptable dans Dynamics" readonly="1"/>
             </field>
 
 
