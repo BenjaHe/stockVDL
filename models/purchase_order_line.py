@@ -31,6 +31,9 @@ class PurchaseOrderline(models.Model):
                                   store=True,
                                   track_visibility='onchange')
 
+    dyn_purchid = fields.Integer(string="Champs PurchID dans Dynamics")
+
+
 
 # class AccountTax(models.Model):
 #     _name = "account.tax"

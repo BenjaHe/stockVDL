@@ -69,6 +69,8 @@
                     <field name="dyn_buyergroupid_id" string="dyn_buyergroupid_id"/>
                     <field name="dyn_orderaccount_id" string="dyn_orderaccount_id"/>
                     <field name="dyn_state" string="dyn_state"/>
+                    <field name="dyn_purchid" string="dyn_purchid"/>
+
               </xpath>
 
             </field>
