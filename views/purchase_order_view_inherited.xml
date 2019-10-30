@@ -61,7 +61,7 @@
               </field>
 
                 <xpath expr="//tree/field[@name='company_id']" position="after">
-                 <!--   <field name="dyn_orderaccount" string="Dyn Tax Item Group"/> -->
+                    <field name="dyn_taxgroup_id" string="dyn_taxgroup_id"/>
               </xpath>
 
             </field>
