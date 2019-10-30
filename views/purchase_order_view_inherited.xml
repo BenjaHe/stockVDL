@@ -67,6 +67,7 @@
                     <field name="dyn_taxgroup_id" string="dyn_taxgroup_id"/>
                     <field name="dyn_taxitemgroup_id" string="dyn_taxitemgroup_id"/>
                     <field name="dyn_buyergroupid_id" string="dyn_buyergroupid_id"/>
+                    <field name="dyn_orderaccount_id" string="dyn_orderaccount_id"/>
               </xpath>
 
             </field>
