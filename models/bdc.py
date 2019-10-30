@@ -18,6 +18,9 @@ class ResPartner(models.Model):
     num_mon_comptable = fields.Char(string='Numéro de mon comptable', required=False, related='comptable.num_comptable', help='Le numéro du comptable qui m est renseigné.')
     fournisseur_economat = fields.Boolean(string='Est un fournisseur de l économat', store=True, required=False, track_visibility='onchange')
 
+    # Champs Dynamics qui donne les références Dyn du fournisseur
+    dyn_buyergroupid = fields.Char(string="Comptable dans Dynamics", required=False, track_visibility='onchange')
+
 
 class Sale(models.Model):
     _inherit = ['sale.order']
@@ -68,11 +71,19 @@ class PurchaseOrder(models.Model):
 class Product(models.Model):
     _inherit = ['product.template']
 
-    # Id de la taxe de l'article dans Microsoft Dyn (utilisé pour pousser les commandes dans Dyn)
-    dyn_taxe = fields.Char(string="Id de la taxe dans Dyn", required=False)
+    # Id de la taxe - taxgroup - de l'article dans Microsoft Dyn (utilisé pour pousser les commandes dans Dyn)
+    dyn_taxgroup = fields.Char(string="Champs TaxGroup issu de Dynamics",
+                               required=False)
+
+    # Id de la taxe - taxitemgroup - de l'article dans Microsoft Dyn (utilisé pour pousser les commandes dans Dyn)
+    dyn_taxitemgroup = fields.Char(string="Champs TaxGroup issu de Dynamics",
+                                   required=False)
 
     # Ajout d'un prix TVAC (21 %) --> car les prix sont tous HTVA en ce compris sur le site web
-    prix_tvac = fields.Monetary(compute='_prix_tvac', string ='Prix TVAC (21 % - pour info)', help='A titre informatif car le calcul des commandes se fait sur base du prix HTVA.')
+    prix_tvac = fields.Monetary(compute='_prix_tvac',
+                                string ='Prix TVAC (21 % - pour info)',
+                                help="A titre informatif car le calcul "
+                                     "des commandes se fait sur base du prix HTVA.")
 
     # Affichage du prix public TVAC
     prix_public_tvac = fields.Monetary(string="Prix public TVAC")
@@ -81,10 +92,14 @@ class Product(models.Model):
     prix_reduc_tvac = fields.Monetary(string="Prix réduit TVAC")
 
     # Affichage du prix public TVAC
-    prix_public_tvac = fields.Monetary(string="Prix public TVAC", help="Prix public TVAC du produit tel qu'exposer à un acheteur hors marché VDL.")
+    prix_public_tvac = fields.Monetary(string="Prix public TVAC",
+                                       help="Prix public TVAC du produit tel "
+                                            "qu'exposer à un acheteur hors marché VDL.")
 
     # Affichage du prix réduit TVAC
-    prix_reduc_tvac = fields.Monetary(string="Prix réduit TVAC", help="Prix VDL suite au marché (réduction appliquée) avec l'application de la TVA.")
+    prix_reduc_tvac = fields.Monetary(string="Prix réduit TVAC",
+                                      help="Prix VDL suite au marché "
+                                           "(réduction appliquée) avec l'application de la TVA.")
 
     @api.depends('list_price')
     def _prix_tvac(self):
