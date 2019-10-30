@@ -73,9 +73,9 @@
                     <field name="create_date" string="Date de création"/>
                 </field>
 
-                <xpath expr="//field[@name='order_line']//tree//field[@name='date_planned']" position="after">
-                    <!-- <field name="create_date" string="Date de creation"/>  -->
-                </xpath>
+        <!--      <xpath expr="//tree/field[@name='product_uom']" position="after">
+                    <field name="bom_total_cost" string="Coût total pour l'article"/>
+              </xpath>  -->
 
              </field>
         </record>
