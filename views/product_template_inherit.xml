@@ -25,6 +25,11 @@
                     <field name="dyn_taxgroup" string="Taxe Group dans Dynamics"/>
                 </field>
 
+              <!--  Champs spécifique issu de Dynamics = Champs TaxGroup issu de Dynamics -->
+              <field name="dyn_taxgroup" position="after">
+                    <field name="dyn_taxitemgroup" string="Taxe Item Group dans Dynamics"/>
+                </field>
+
 <!--              <field name="prix_tvac" position="after">-->
 <!--                  <field name="prix_public" string="Prix public TVAC"/>-->
 <!--              </field>-->
