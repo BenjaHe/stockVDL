@@ -23,6 +23,8 @@ class ResPartner(models.Model):
     mon_dyn_buyergroupid = fields.Char(string='Numéro de mon comptable dans Dynamics', required=False, related='comptable.dyn_buyergroupid',
                                     help='Le numéro du comptable dans Dynamics qui m est renseigné.')
 
+    dyn_orderaccount = fields.Char(string='Numéro du fournisseur dans Dynamics', required=False, help='Vient automatiquement')
+
 
 class Sale(models.Model):
     _inherit = ['sale.order']
