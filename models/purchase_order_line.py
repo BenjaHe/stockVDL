@@ -34,8 +34,6 @@ class PurchaseOrderline(models.Model):
     dyn_purchid = fields.Integer(string="Champs PurchID dans Dynamics",
                                  required=False)
 
-
-
 # class AccountTax(models.Model):
 #     _name = "account.tax"
 #     _inherit = "account.tax"
