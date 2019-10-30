@@ -27,11 +27,12 @@ class PurchaseOrderline(models.Model):
                                   ('Invoiced', 'En cours de livraison'),
                                   ('Canceled','Annulé')],
                                   string='Statut Dynamics de la ligne',
-                                  default='brouillon',
+                                  default='None',
                                   store=True,
                                   track_visibility='onchange')
 
-    dyn_purchid = fields.Integer(string="Champs PurchID dans Dynamics", required=False)
+    dyn_purchid = fields.Integer(string="Champs PurchID dans Dynamics",
+                                 required=False)
 
 
 
