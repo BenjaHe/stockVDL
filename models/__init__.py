@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 from . import magasin_model
 from . import invoiced_total_tvac_model
 from . import account_invoice_inherit
