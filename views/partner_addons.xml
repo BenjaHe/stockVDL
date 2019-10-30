@@ -22,7 +22,7 @@
 
             <field name="ref" position="after">
                 <field name="fournisseur_economat" string="Est un fournisseur de l'Economat"/>
-             <!--   <field name="dyn_orderaccount" string="dyn_orderaccount"/> -->
+                <field name="dyn_orderaccount" string="dyn_orderaccount"/>
             </field>
 
           </field>
