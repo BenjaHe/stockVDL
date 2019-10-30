@@ -70,7 +70,7 @@ class PurchaseOrder(models.Model):
                                           readonly=True,
                                           required=False)
 
-    dyn_orderaccount = fields.Boolean(related='partner_id.dyn_orderaccount',
+    dyn_orderaccount = fields.Char(related='partner_id.dyn_orderaccount',
                                           string='Num Dynamics du fournisseur',
                                           readonly=True,
                                           required=False)
