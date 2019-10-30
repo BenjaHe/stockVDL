@@ -66,10 +66,10 @@ class PurchaseOrder(models.Model):
                                           readonly=True,
                                           required=False)
 
-    dyn_buyergroupid = fields.Char("res.users", related='dest_address_id.dyn_buyergroupid',
-                                   string="Comptable dans Dynamics",
-                                   readonly=True,
-                                   required=False)
+    # dyn_buyergroupid = fields.Char("res.users", related='dest_address_id.dyn_buyergroupid',
+    #                                string="Comptable dans Dynamics",
+    #                                readonly=True,
+    #                                required=False)
 
 class Product(models.Model):
     _inherit = ['product.template']
