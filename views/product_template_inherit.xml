@@ -21,7 +21,7 @@
                 </field>
 
               <!--  Champs spécifique issu de Dynamics = "taxgroup" -->
-              <field name="invoice_policy" position="after">
+              <field name="prix_reduc_tvac" position="after">
                     <field name="dyn_taxgroup" string="Taxe Group dans Dynamics"/>
                 </field>
 
