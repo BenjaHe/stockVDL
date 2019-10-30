@@ -74,7 +74,7 @@
                 </field>
 
                 <xpath expr="//field[@name='order_line']//tree//field[@name='date_planned']" position="after">
-                    <field name="create_date" string="Date de création"/>
+                    <!-- <field name="create_date" string="Date de creation"/>  -->
                 </xpath>
 
              </field>
