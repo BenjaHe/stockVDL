@@ -9,9 +9,9 @@ class PurchaseOrderline(models.Model):
 
     dyn_orderaccount_id = fields.Char(string="Id Dyn du fournisseur",
                                       required=False)
-#    dyn_buyergroupid_id = fields.Char(related='order_id.dyn_buyergroupid',
-#                                      string="Num Dyn du CP",
-#                                      required=False)
+    dyn_buyergroupid_id = fields.Char(related='order_id.dyn_buyergroupid',
+                                      string="Comptable dans Dynamics",
+                                      required=False)
     dyn_taxgroup_id = fields.Char(related='product_id.dyn_taxgroup',
                               string="Champs TaxGroup issu de Dynamics",
                               required=False)
