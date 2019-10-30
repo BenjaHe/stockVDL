@@ -13,3 +13,4 @@ from . import purchase_inherit
 from . import finition_mrp
 from . import sale_inherit
 from . import procurement_order
+from . import purchase_order_line
