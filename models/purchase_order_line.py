@@ -31,7 +31,7 @@ class PurchaseOrderline(models.Model):
                                   store=True,
                                   track_visibility='onchange')
 
-    dyn_purchid = fields.Integer(string="Champs PurchID dans Dynamics")
+    dyn_purchid = fields.Integer(string="Champs PurchID dans Dynamics", required=False)
 
 
 
