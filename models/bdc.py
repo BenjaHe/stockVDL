@@ -19,7 +19,9 @@ class ResPartner(models.Model):
     fournisseur_economat = fields.Boolean(string='Est un fournisseur de l économat', store=True, required=False, track_visibility='onchange')
 
     # Champs Dynamics qui donne les références Dyn du fournisseur
-    dyn_buyergroupid = fields.Many2one('res.users', string="Comptable dans Dynamics", required=False, track_visibility='onchange')
+    dyn_buyergroupid = fields.Char(string='Numéro du comptable dans Dynamics', required=False, track_visibility='onchange', help='A renseigner uniquement pour les comptables.')
+    mon_dyn_buyergroupid = fields.Char(string='Numéro de mon comptable dans Dynamics', required=False, related='comptable.dyn_buyergroupid',
+                                    help='Le numéro du comptable dans Dynamics qui m est renseigné.')
 
 
 class Sale(models.Model):
@@ -66,10 +68,10 @@ class PurchaseOrder(models.Model):
                                           readonly=True,
                                           required=False)
 
-    dyn_buyergroupid = fields.Many2one("res.users",related='dest_address_id.dyn_buyergroupid',
-                                       string="Comptable dans Dynamics",
-                                       readonly=True,
-                                       required=False)
+    dyn_buyergroupid_id = fields.Char("res.users",
+                                   related='dest_address_id.comptable.dyn_buyergroupid',
+                                   readonly=True,
+                                   required=False)
 
 class Product(models.Model):
     _inherit = ['product.template']
