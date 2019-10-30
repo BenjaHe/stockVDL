@@ -19,7 +19,7 @@ class ResPartner(models.Model):
     fournisseur_economat = fields.Boolean(string='Est un fournisseur de l économat', store=True, required=False, track_visibility='onchange')
 
     # Champs Dynamics qui donne les références Dyn du fournisseur
-    dyn_buyergroupid = fields.Char(string="Comptable dans Dynamics", required=False, track_visibility='onchange')
+    dyn_buyergroupid = fields.Many2one('res.users', string="Comptable dans Dynamics", required=False, track_visibility='onchange')
 
 
 class Sale(models.Model):
