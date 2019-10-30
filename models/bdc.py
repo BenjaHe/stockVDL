@@ -66,9 +66,7 @@ class PurchaseOrder(models.Model):
                                           readonly=True,
                                           required=False)
 
-    dyn_buyergroupid = fields.Char("res.partner",
-                                     related='dest_address_id.dyn_buyergroupid',
-                                     string="Comptable dans Dynamics",
+    dyn_buyergroupid = fields.Char(string="Comptable dans Dynamics",
                                      readonly=True,
                                      required=False)
 
