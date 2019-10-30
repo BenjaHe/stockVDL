@@ -73,7 +73,7 @@
                     <field name="create_date" string="Date de création"/>
                 </field>
 
-                <field name="date_planned" position="attributes">
+                <field name="date_planned" position="attribute">
                      <attribute name="invisible">1</attribute>
                 </field>
 
