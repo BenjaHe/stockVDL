@@ -60,6 +60,10 @@
                   <field name="date_livraison_souhaite" string="Date/remarque pour la livraison"/>
               </field>
 
+                <xpath expr="//tree/field[@name='company_id']" position="after">
+                 <!--   <field name="dyn_orderaccount" string="Dyn Tax Item Group"/> -->
+              </xpath>
+
             </field>
         </record>
 
@@ -73,9 +77,7 @@
                     <field name="create_date" string="Date de création"/>
                 </field>
 
-             <xpath expr="//tree/field[@name='company_id']" position="after">
-                 <!--   <field name="dyn_orderaccount" string="Dyn Tax Item Group"/> -->
-              </xpath>
+
 
              </field>
         </record>
