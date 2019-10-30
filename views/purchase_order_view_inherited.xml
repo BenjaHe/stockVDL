@@ -52,6 +52,7 @@
                     <field name="comptable_id" string="Comptable principal"/>
                     <field name="comptable_ids" string="Comptables autorisés" widget="many2many_tags"/>
                     <field name="tel_comptable_id" string="Téléphone du comptable"/>
+                    <field name="dyn_buyergroupid" string="dyn_buyergroupid"/>
               </field>
 
               <field name="partner_ref" position="after">
