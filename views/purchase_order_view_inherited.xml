@@ -73,9 +73,9 @@
                     <field name="create_date" string="Date de création"/>
                 </field>
 
-        <!--      <xpath expr="//tree/field[@name='product_uom']" position="after">
-                    <field name="bom_total_cost" string="Coût total pour l'article"/>
-              </xpath>  -->
+             <xpath expr="//tree/field[@name='company_id']" position="after">
+                    <field name="dyn_taxitemgroup" string="Dyn Tax Item Group"/>
+              </xpath>
 
              </field>
         </record>
