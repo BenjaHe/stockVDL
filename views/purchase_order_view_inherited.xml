@@ -52,14 +52,15 @@
                     <field name="comptable_id" string="Comptable principal"/>
                     <field name="comptable_ids" string="Comptables autorisés" widget="many2many_tags"/>
                     <field name="tel_comptable_id" string="Téléphone du comptable"/>
-                    <field name="dyn_buyergroupid_id" string="Num Dyn du comptable"/>
-                    <field name="dyn_orderaccount" string="Num Dyn du fournisseur"/>
+
               </field>
 
               <field name="partner_ref" position="after">
                   <field name="article_budgetaire" string="Article budgétaire"/>
                   <field name="num_engagement" string="Numéro d'engagement"/>
                   <field name="date_livraison_souhaite" string="Date/remarque pour la livraison"/>
+                  <field name="dyn_buyergroupid_id" string="Num Dyn du comptable"/>
+                    <field name="dyn_orderaccount" string="Num Dyn du fournisseur"/>
               </field>
 
                 <xpath expr="//tree/field[@name='company_id']" position="after">
