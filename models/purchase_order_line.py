@@ -21,9 +21,16 @@ class PurchaseOrderline(models.Model):
                                string="Champs TaxGroup issu de Dynamics",
                                required=False)
 
-#    dyn_buyergroupid_id = fields.Char(related='product_id.sellers_id.name.dyn_buyergroupid',
-#                                   string="Champs Buyergroupid issu de Dynamics",
-#                                   required=False)
+    dyn_state = fields.Selection([('None', 'Brouillon'),
+                                  ('Backorder', 'Bon de commande créé'),
+                                  ('Received', 'Commande reçue par le fournisseur'),
+                                  ('Invoiced', 'En cours de livraison'),
+                                  ('Canceled','Annulé')],
+                                  string='Statut Dynamics de la ligne',
+                                  default='brouillon',
+                                  store=True,
+                                  track_visibility='onchange')
+
 
 # class AccountTax(models.Model):
 #     _name = "account.tax"
