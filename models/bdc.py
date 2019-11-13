@@ -18,7 +18,12 @@ class ResPartner(models.Model):
     num_mon_comptable = fields.Char(string='Numéro de mon comptable', required=False, related='comptable.num_comptable', help='Le numéro du comptable qui m est renseigné.')
     fournisseur_economat = fields.Boolean(string='Est un fournisseur de l économat', store=True, required=False, track_visibility='onchange')
 
+    # Champs Dynamics qui donne les références Dyn du fournisseur
+    dyn_buyergroupid = fields.Char(string='Numéro du comptable dans Dynamics', required=False, track_visibility='onchange', help='A renseigner uniquement pour les comptables.')
+    mon_dyn_buyergroupid = fields.Char(string='Numéro de mon comptable dans Dynamics', required=False, related='comptable.dyn_buyergroupid',
+                                    help='Le numéro du comptable dans Dynamics qui m est renseigné.')
 
+    dyn_orderaccount = fields.Char(string='Numéro du fournisseur dans Dynamics', required=False, help='Vient automatiquement')
 
 
 class Sale(models.Model):
