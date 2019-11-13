@@ -84,7 +84,7 @@ class Product(models.Model):
     _inherit = ['product.template']
 
     # Id de la taxe - taxgroup - de l'article dans Microsoft Dyn (utilisé pour pousser les commandes dans Dyn)
-    dyn_taxgroup_deprecie = fields.Char(string="Champs TaxGroup issu de Dynamics",
+    dyn_taxgroup = fields.Char(string="Champs TaxGroup issu de Dynamics",
                                required=False)
 
     # Id de la taxe - taxitemgroup - de l'article dans Microsoft Dyn (utilisé pour pousser les commandes dans Dyn)
