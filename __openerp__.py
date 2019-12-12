@@ -32,7 +32,7 @@
              'views/website_customer_informations.xml',
              'views/partner_addons.xml',
              'views/bdc_addons.xml',
-             'views/purchase_order_view_inherited.xml',
+
              'views/mrp_production_form_inherit.xml',
              'views/finition_mrp_views.xml',
              'reports/report_purchase_order_custom_vdl.xml',
